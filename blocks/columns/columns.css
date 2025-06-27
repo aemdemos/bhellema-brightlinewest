@@ -1,4 +1,4 @@
-
+/* Base columns selectors at the top for specificity order compliance */
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -30,6 +30,92 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+}
+
+/* ---- columns3 before columns2 > div > div:first-child for correct specificity order ---- */
+.columns.columns3 {
+  padding: 0;
+}
+
+.columns.columns3 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 44px;
+  width: 100%;
+  margin: 0;
+}
+
+/* Card styling */
+.columns.columns3 > div > div {
+  background: #eaf3f3;
+  border-radius: 14px;
+  min-width: 380px;
+  max-width: 440px;
+  padding: 52px 36px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Name styling */
+.columns.columns3 > div > div > h4 {
+  color: #363636;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  font-family: var(--heading-font-family), Arial, sans-serif;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+
+/* Remove bullets and fix spacing */
+.columns.columns3 > div > div ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.columns.columns3 > div > div ul li {
+  color: #363636;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: var(--body-font-family), Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dot indicator below cards */
+.columns.columns3::after {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #757575;
+  border-radius: 50%;
+  margin: 36px auto 0;
+  content: "";
+}
+
+/* Responsive adjustments */
+@media (width <= 900px) {
+  .columns.columns3 > div {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .columns.columns3 > div > div {
+    min-width: 0;
+    width: 100%;
+    max-width: 440px;
+    padding: 32px 20px;
+  }
+
+  .columns.columns3::after {
+    margin-top: 28px;
   }
 }
 
@@ -114,7 +200,7 @@
 .columns.columns2 .columns-img-col .menu-bar,
 .columns.columns2 .columns-img-col .menu-links,
 .columns.columns2 .columns-img-col .menu-button,
-.columns.columns2 .columns-img-col [class*="menu"], 
+.columns.columns2 .columns-img-col [class*="menu"],
 .columns.columns2 .columns-img-col [class*="overlay"] {
   display: none;
   visibility: hidden;
