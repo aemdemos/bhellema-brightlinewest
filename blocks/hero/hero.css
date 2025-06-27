@@ -1,1 +1,331 @@
-.hero-container .hero-wrapper {  max-width: unset;  padding: 0;}.hero {  position: relative;  padding: 40px 24px;  min-height: 300px;}.hero h1,.hero h2,.hero h3,.hero h4,.hero h5,.hero h6,.hero p {  max-width: 1200px;  margin-left: auto;  margin-right: auto;  color: var(--background-color);}.hero.no-image * {  color: var(--text-color);}.hero picture {  position: absolute;  z-index: -1;  inset: 0;  object-fit: cover;  box-sizing: border-box;}.hero img {  object-fit: cover;  width: 100%;  height: 100%;}.hero.hero6 picture,.hero.hero6 img {  display: block;  width: 100%;  height: 100%;  object-fit: cover;  border-radius: 36px 36px 0 0;}.hero.hero1 {  position: relative;  display: flex;  align-items: stretch;  justify-content: center;  min-height: 544px;  height: 544px;  border-radius: 24px;  overflow: hidden;  width: 100%;  box-sizing: border-box;  background: none;  padding: 0;}.hero.hero1 > div:first-child {  position: absolute;  inset: 0;  width: 100%;  height: 100%;  z-index: 1;  display: block;  pointer-events: none;}.hero.hero1 > div:first-child picture,.hero.hero1 > div:first-child img {  width: 100%;  height: 100%;  display: block;  object-fit: cover;  min-width: 100%;  min-height: 100%;}.hero.hero6 > div:first-child {  width: 100%;  height: 100%;  position: relative;  z-index: 1;  display: block;}/* Move .hero.hero6 > div:nth-child(2) above .hero.hero6 > div:first-child > div */.hero.hero6 > div:nth-child(2) {  position: absolute;  inset: 0;  z-index: 2;  width: 100%;  height: 100%;  display: flex;  flex-direction: column;  align-items: center;  justify-content: center;  pointer-events: none;  transform: translateY(-8%);  box-sizing: border-box;}.hero.hero1 > div:last-child {  position: absolute;  inset: 0;  z-index: 2;  width: 100%;  height: 100%;  display: flex;  justify-content: center;  align-items: center;  pointer-events: none;}.hero.hero6 > div:first-child > div {  width: 100%;  height: 100%;}.hero.hero6 > div:nth-child(2) > div {  pointer-events: auto;  background: rgb(52 117 120 / 98%);  padding: 22px 46px;  min-width: 38vw;  max-width: 760px;  border-radius: 8px;  display: flex;  justify-content: center;  align-items: center;  box-sizing: border-box;}.hero.hero6 h1 {  color: #fff;  font-family: var(--heading-font-family), Arial, sans-serif;  font-size: 2.75rem;  font-weight: 700;  letter-spacing: 0;  margin: 0;  text-align: center;  line-height: 1.1;  width: 100%;}.hero.hero1 > div:last-child h1 {  background: #3D963A;  color: #fff;  font-family: var(--heading-font-family), sans-serif;  font-weight: 800;  font-size: 2rem;  line-height: 1.1;  text-align: center;  padding: 0.17em 1.4em;  border-radius: 10px;  margin: 0;  display: inline-block;  pointer-events: auto;  box-shadow: none;  letter-spacing: 0.01em;  position: relative;  top: -5%;}/* Responsive tweaks */@media (width <= 799px) {  .hero.hero1 {    min-height: 320px;    height: 320px;    border-radius: 0;  }  .hero.hero1 > div:last-child h1 {    font-size: 1rem;    padding: 0.12em 0.7em;    border-radius: 7px;    top: -3%;  }}/* Responsive adjustments */@media (width <= 900px) {  .hero.hero6 {    min-height: 320px;    height: 320px;    border-radius: 18px 18px 0 0;  }  .hero.hero6 > div:nth-child(2) {    transform: translateY(-4%);  }  .hero.hero6 > div:nth-child(2) > div {    padding: 14px 6vw;    min-width: 0;    max-width: 94vw;    border-radius: 6px;  }  .hero.hero6 h1 {    font-size: 1.35rem;  }}.hero.hero6 {  position: relative;  width: 100%;  min-height: 540px;  height: 800px;  border-radius: 36px 36px 0 0;  overflow: hidden;  background: none;  padding: 0;}
+/* --- MAIN HERO CONTAINER AND WRAPPER --- */
+.hero-container .hero-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero {
+  position: relative;
+  padding: 40px 24px;
+  min-height: 300px;
+}
+
+.hero h1,
+.hero h2,
+.hero h3,
+.hero h4,
+.hero h5,
+.hero h6,
+.hero p {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--background-color);
+}
+
+.hero.no-image * {
+  color: var(--text-color);
+}
+
+.hero picture {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.hero img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.hero.hero6 picture,
+.hero.hero6 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 36px 36px 0 0;
+}
+
+.hero.hero1 {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  min-height: 544px;
+  height: 544px;
+  border-radius: 24px;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  background: none;
+  padding: 0;
+}
+
+.hero.hero1 > div:first-child {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: block;
+  pointer-events: none;
+}
+
+.hero.hero9 picture,
+.hero.hero9 picture img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 32px;
+}
+
+.hero.hero1 > div:first-child picture,
+.hero.hero1 > div:first-child img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.hero.hero6 > div:first-child {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+/* --- HERO 9 SELECTORS --- */
+.hero.hero9 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 720px;
+  border-radius: 32px;
+  overflow: hidden;
+  background: transparent;
+  padding: 0;
+}
+
+.hero.hero9 > div:first-child {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+}
+
+.hero.hero9 > div:last-child {
+  background: #fff;
+  width: 100%;
+  display: block;
+  padding: 0.05rem 0 0.28rem;
+  margin: 0;
+  border-radius: 0 0 32px 32px;
+  box-sizing: border-box;
+}
+
+/* --- HERO 6 CONTINUED --- */
+.hero.hero6 > div:nth-child(2) {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transform: translateY(-8%);
+  box-sizing: border-box;
+}
+
+.hero.hero6 > div:first-child > div {
+  width: 100%;
+  height: 100%;
+}
+
+.hero.hero6 > div:nth-child(2) > div {
+  pointer-events: auto;
+  background: rgb(52 117 120 / 98%);
+  padding: 22px 46px;
+  min-width: 38vw;
+  max-width: 760px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.hero.hero1 > div:last-child {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.hero.hero6 h1 {
+  color: #fff;
+  font-family: var(--heading-font-family), Arial, sans-serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 0;
+  text-align: center;
+  line-height: 1.1;
+  width: 100%;
+}
+
+.hero.hero1 > div:last-child h1 {
+  background: #3D963A;
+  color: #fff;
+  font-family: var(--heading-font-family), sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 1.1;
+  text-align: center;
+  padding: 0.17em 1.4em;
+  border-radius: 10px;
+  margin: 0;
+  display: inline-block;
+  pointer-events: auto;
+  box-shadow: none;
+  letter-spacing: 0.01em;
+  position: relative;
+  top: -5%;
+}
+
+/* --- PRESS RELEASES BUTTON --- */
+.hero.hero9 h1#press-releases {
+  position: absolute;
+  left: 50%;
+  top: 29%;
+  transform: translateX(-50%);
+  background: #219080;
+  color: #fff;
+  font-family: var(--heading-font-family), Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  border-radius: 32px;
+  padding: 0.43em 2.2em;
+  margin: 0;
+  text-align: center;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  box-shadow: 0 6px 24px rgb(0 0 0 / 8%);
+  display: inline-block;
+  white-space: nowrap;
+  min-width: 235px;
+  z-index: 2;
+}
+
+.hero.hero9 h1#california-and-southern-nevada-building-trades-join-brightline-west-in-historic-commitment-to-advance-us-high-speed-rail {
+  color: #363636;
+  font-family: var(--heading-font-family), Arial, sans-serif;
+  font-weight: 800;
+  font-size: 2.35rem;
+  text-transform: uppercase;
+  line-height: 1.11;
+  letter-spacing: 0.01em;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  display: block;
+  overflow-wrap: break-word;
+  max-width: none;
+}
+
+/* Responsive tweaks */
+@media (width <= 799px) {
+  .hero.hero1 {
+    min-height: 320px;
+    height: 320px;
+    border-radius: 0;
+  }
+
+  .hero.hero1 > div:last-child h1 {
+    font-size: 1rem;
+    padding: 0.12em 0.7em;
+    border-radius: 7px;
+    top: -3%;
+  }
+}
+
+/* Responsive adjustments */
+@media (width <= 900px) {
+  .hero.hero6 {
+    min-height: 320px;
+    height: 320px;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .hero.hero6 > div:nth-child(2) {
+    transform: translateY(-4%);
+  }
+
+  .hero.hero6 > div:nth-child(2) > div {
+    padding: 14px 6vw;
+    min-width: 0;
+    max-width: 94vw;
+    border-radius: 6px;
+  }
+
+  .hero.hero6 h1 {
+    font-size: 1.35rem;
+  }
+
+  .hero.hero9 {
+    min-height: 330px;
+    border-radius: 18px;
+  }
+
+  .hero.hero9 > div:first-child,
+  .hero.hero9 picture,
+  .hero.hero9 picture img {
+    height: 180px;
+    border-radius: 18px;
+    min-height: 180px;
+  }
+
+  .hero.hero9 h1#press-releases {
+    font-size: 1.13rem;
+    min-width: 110px;
+    padding: 0.19em 1em;
+    border-radius: 15px;
+    top: 26%;
+  }
+
+  .hero.hero9 > div:last-child {
+    padding: 0.02rem 0 0.15rem;
+    border-radius: 0 0 18px 18px;
+  }
+
+  .hero.hero9 h1#california-and-southern-nevada-building-trades-join-brightline-west-in-historic-commitment-to-advance-us-high-speed-rail {
+    font-size: 1.02rem;
+    padding: 0;
+  }
+}
+
+.hero.hero6 {
+  position: relative;
+  width: 100%;
+  min-height: 540px;
+  height: 800px;
+  border-radius: 36px 36px 0 0;
+  overflow: hidden;
+  background: none;
+  padding: 0;
+}
