@@ -1,3 +1,4 @@
+
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -29,5 +30,122 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+}
+
+.columns.columns2 {
+  background: #fff;
+  padding: 56px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.columns.columns2 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 38px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Left text column */
+.columns.columns2 > div > div:first-child {
+  flex: 1 1 0;
+  max-width: 480px;
+  text-align: left;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.columns.columns2 > div > div:first-child h2 {
+  color: #333;
+  font-size: 2.5rem;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 32px;
+  line-height: 1.1;
+}
+
+.columns.columns2 > div > div:first-child p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+  max-width: 40em;
+}
+
+/* Right image column: align image to top of the flex row, nudge image up */
+.columns.columns2 .columns-img-col {
+  flex: 0 0 400px;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-top: -10px;
+  padding-top: 0;
+  align-self: flex-start;
+}
+
+.columns.columns2 .columns-img-col img,
+.columns.columns2 .columns-img-col picture {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+  background: #eee;
+  margin-top: 0;
+}
+
+.columns.columns2 .columns-img-col .overlay,
+.columns.columns2 .columns-img-col .menu,
+.columns.columns2 .columns-img-col .menu-bar,
+.columns.columns2 .columns-img-col .menu-links,
+.columns.columns2 .columns-img-col .menu-button,
+.columns.columns2 .columns-img-col [class*="menu"], 
+.columns.columns2 .columns-img-col [class*="overlay"] {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (width <= 900px) {
+  .columns.columns2 {
+    padding: 32px 0;
+  }
+
+  .columns.columns2 > div {
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  .columns.columns2 .columns-img-col {
+    width: 100%;
+    height: auto;
+    justify-content: flex-start;
+    margin-top: 0;
+  }
+
+  .columns.columns2 .columns-img-col img,
+  .columns.columns2 .columns-img-col picture {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    max-height: 400px;
+    margin: 0 auto;
   }
 }
