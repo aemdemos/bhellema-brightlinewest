@@ -59,3 +59,107 @@
   border-top: 1px solid #dadada;
   background-color: var(--background-color);
 }
+
+.accordion.accordion7 summary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 14px 32px;
+  position: relative;
+  background: #fff;
+  cursor: pointer;
+  min-height: 0;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  transition: none;
+}
+
+.accordion.accordion7 summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion.accordion7 summary::after {
+  width: 8px;
+  height: 8px;
+  border: solid #036;
+  border-width: 0 1.5px 1.5px 0;
+  border-radius: 0 0 1px;
+  position: absolute;
+  right: 32px;
+  top: 56%;
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 0.2s;
+  background: transparent;
+}
+
+.accordion.accordion7 details[open] summary::after {
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.accordion.accordion7 summary h3 {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 700;
+  font-family: 'Futura PT', 'Futura PT Fallback', sans-serif;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  flex: 1 1 auto;
+  align-self: center;
+  background: transparent;
+}
+
+.accordion.accordion7 details {
+  border: none;
+  border-bottom: 1px solid #eaeaea;
+  margin: 0;
+  background: #fff;
+}
+
+.accordion.accordion7 details:last-child {
+  border-bottom: none;
+}
+
+.accordion.accordion7 summary:focus,
+.accordion.accordion7 summary:hover,
+.accordion.accordion7 details[open] summary {
+  background: #fff;
+}
+
+.accordion.accordion7 .accordion-item-body {
+  background: #fff;
+  padding: 0 32px 20px;
+  margin: 0;
+  font-size: 16px;
+  color: #222;
+  font-family: 'Futura PT', 'Futura PT Fallback', sans-serif;
+  border: none;
+  box-shadow: none;
+}
+
+.accordion.accordion7 details[open] .accordion-item-body {
+  border: none;
+  background: #fff;
+}
+
+@media (width <= 700px) {
+  .accordion.accordion7 {
+    max-width: 100%;
+  }
+
+  .accordion.accordion7 summary,
+  .accordion.accordion7 .accordion-item-body {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .accordion.accordion7 summary::after {
+    right: 16px;
+  }
+}
+
+.accordion.accordion7 {
+  /* Merged properties from both snippets, with duplicates removed and latest values kept */
+}
