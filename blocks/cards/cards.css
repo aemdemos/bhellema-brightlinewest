@@ -134,3 +134,136 @@
     height: 140px;
   }
 }
+
+.cards.cards20 {
+  display: block;
+}
+
+.cards.cards20 > ul {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 0;
+}
+
+/* Layout the card row, vertically center the text block with the image */
+.cards.cards20 > ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  box-shadow: none;
+}
+
+/* Image styles */
+.cards.cards20 .cards-card-image {
+  flex: 0 0 auto;
+  width: 258px;
+  min-width: 258px;
+  max-width: 258px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.cards.cards20 .cards-card-image img {
+  width: 258px;
+  height: 193.5px;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  background: none;
+}
+
+/* Text block: center vertically, make it more compact, reduce left margin */
+.cards.cards20 .cards-card-body {
+  flex: 1 1 0;
+  margin-left: 16px;
+  max-width: 375px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 0;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+/* Headline: slightly larger and bolder for match */
+.cards.cards20 .cards-card-body h4,
+.cards.cards20 .cards-card-body h4 a {
+  color: #222;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1.19;
+  margin: 0 0 20px;
+  padding: 0;
+  text-transform: uppercase;
+  font-family: var(--heading-font-family, Futura PT, sans-serif);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  overflow-wrap: break-word;
+}
+
+/* Date */
+.cards.cards20 .cards-card-body p:first-of-type {
+  color: #0072bc;
+  font-weight: 700;
+  font-size: 19px;
+  margin: 0 0 11px;
+  line-height: 1.4;
+  display: block;
+}
+
+/* Description paragraph: slightly larger */
+.cards.cards20 .cards-card-body p:nth-of-type(2) {
+  color: #222;
+  font-size: 21px;
+  line-height: 1.48;
+  font-weight: 400;
+  margin: 0;
+}
+
+.cards.cards20 .cards-card-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive: stack vertically on small screens */
+@media (width <= 900px) {
+  .cards.cards20 > ul {
+    flex-direction: column;
+  }
+
+  .cards.cards20 > ul > li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cards.cards20 .cards-card-image,
+  .cards.cards20 .cards-card-image img {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .cards.cards20 .cards-card-body {
+    margin-left: 0;
+    max-width: 100%;
+    padding: 0 0 20px;
+  }
+}
