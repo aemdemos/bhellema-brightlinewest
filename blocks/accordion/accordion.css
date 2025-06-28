@@ -21,8 +21,20 @@
   transition: background-color 0.2s;
 }
 
-.accordion details[open] summary {
-  background-color: var(--light-color);
+.accordion.accordion7 summary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 14px 32px;
+  position: relative;
+  background: #fff;
+  cursor: pointer;
+  min-height: 0;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  transition: none;
 }
 
 .accordion details summary:focus,
@@ -30,7 +42,21 @@
   background-color: var(--light-color);
 }
 
+.accordion.accordion7 summary:focus,
+.accordion.accordion7 summary:hover,
+.accordion.accordion7 details[open] summary {
+  background: #fff;
+}
+
+.accordion details[open] summary {
+  background-color: var(--light-color);
+}
+
 .accordion details summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion.accordion7 summary::-webkit-details-marker {
   display: none;
 }
 
@@ -47,17 +73,62 @@
   transition: transform 0.2s;
 }
 
+.accordion.accordion7 summary::after {
+  width: 8px;
+  height: 8px;
+  border: solid #036;
+  border-width: 0 1.5px 1.5px 0;
+  border-radius: 0 0 1px;
+  position: absolute;
+  right: 32px;
+  top: 56%;
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 0.2s;
+  background: transparent;
+}
+
 .accordion details[open] summary::after {
   transform: translateY(-50%) rotate(-45deg);
+}
+
+.accordion.accordion7 details[open] summary::after {
+  transform: translateY(-50%) rotate(-135deg);
 }
 
 .accordion details .accordion-item-body {
   padding: 0 16px;
 }
 
+.accordion.accordion7 .accordion-item-body {
+  background: #fff;
+  padding: 0 32px 20px;
+  margin: 0;
+  font-size: 16px;
+  color: #222;
+  font-family: 'Futura PT', 'Futura PT Fallback', sans-serif;
+  border: none;
+  box-shadow: none;
+}
+
+.accordion.accordion29 .accordion-item-body {
+  padding: 0 32px 24px 0;
+  background: #fff;
+  margin: 0;
+  font-size: 16px;
+  color: #232323;
+  font-family: 'Futura PT', 'Futura PT Fallback', sans-serif;
+  border: none;
+  box-shadow: none;
+}
+
 .accordion details[open] .accordion-item-body {
   border-top: 1px solid #dadada;
   background-color: var(--background-color);
+}
+
+.accordion.accordion7 details[open] .accordion-item-body {
+  border: none;
+  background: #fff;
 }
 
 /* Accordion 7 styles (next most specific) */
@@ -76,80 +147,6 @@
   border-bottom: none;
 }
 
-.accordion.accordion7 summary {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 14px 32px;
-  position: relative;
-  background: #fff;
-  cursor: pointer;
-  min-height: 0;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  transition: none;
-}
-
-.accordion.accordion7 summary:focus,
-.accordion.accordion7 summary:hover,
-.accordion.accordion7 details[open] summary {
-  background: #fff;
-}
-
-.accordion.accordion7 summary::-webkit-details-marker {
-  display: none;
-}
-
-.accordion.accordion7 summary::after {
-  width: 8px;
-  height: 8px;
-  border: solid #036;
-  border-width: 0 1.5px 1.5px 0;
-  border-radius: 0 0 1px;
-  position: absolute;
-  right: 32px;
-  top: 56%;
-  transform: translateY(-50%) rotate(45deg);
-  transition: transform 0.2s;
-  background: transparent;
-}
-
-.accordion.accordion7 details[open] summary::after {
-  transform: translateY(-50%) rotate(-135deg);
-}
-
-.accordion.accordion7 summary h3 {
-  font-size: 16px;
-  line-height: 1.2;
-  font-weight: 700;
-  font-family: 'Futura PT', 'Futura PT Fallback', sans-serif;
-  color: #222;
-  margin: 0;
-  padding: 0;
-  flex: 1 1 auto;
-  align-self: center;
-  background: transparent;
-}
-
-.accordion.accordion7 .accordion-item-body {
-  background: #fff;
-  padding: 0 32px 20px;
-  margin: 0;
-  font-size: 16px;
-  color: #222;
-  font-family: 'Futura PT', 'Futura PT Fallback', sans-serif;
-  border: none;
-  box-shadow: none;
-}
-
-.accordion.accordion7 details[open] .accordion-item-body {
-  border: none;
-  background: #fff;
-}
-
-/* Accordion 29 styles (most specific last) */
 .accordion.accordion29 {
   width: 100%;
   max-width: none;
@@ -193,6 +190,17 @@
   display: none;
 }
 
+.accordion.accordion29 > details > summary::after {
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url("data:image/svg+xml,%3Csvg width='16' height='16' fill='none' stroke='%23787878' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center/16px 16px no-repeat;
+}
+
 .accordion.accordion29 > details > summary h3 {
   font-size: 19px;
   font-weight: 600;
@@ -208,25 +216,24 @@
   letter-spacing: 0;
 }
 
-/* Downward chevron, medium gray. This is a real chevron, not right-angle */
-.accordion.accordion29 > details > summary::after {
-  display: block;
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  right: 32px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: url("data:image/svg+xml,%3Csvg width='16' height='16' fill='none' stroke='%23787878' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center/16px 16px no-repeat;
+.accordion.accordion7 summary h3 {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 700;
+  font-family: 'Futura PT', 'Futura PT Fallback', sans-serif;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  flex: 1 1 auto;
+  align-self: center;
+  background: transparent;
 }
 
-.accordion.accordion29 .accordion-item-body {
-  padding: 0 32px 24px 0;
+/* Merged .accordion.accordion36 selector */
+.accordion.accordion36 {
   background: #fff;
+  padding: 0;
   margin: 0;
-  font-size: 16px;
-  color: #232323;
-  font-family: 'Futura PT', 'Futura PT Fallback', sans-serif;
   border: none;
   box-shadow: none;
 }
