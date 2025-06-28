@@ -1,5 +1,6 @@
 
 
+
 /* --- MAIN HERO CONTAINER AND WRAPPER --- */
 .hero-container .hero-wrapper {
   max-width: unset;
@@ -45,17 +46,14 @@
 
 .hero.hero1 {
   position: relative;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  min-height: 544px;
-  height: 544px;
-  border-radius: 24px;
-  overflow: hidden;
   width: 100%;
-  box-sizing: border-box;
+  min-height: 520px;
+  height: 520px;
+  border-radius: 16px;
+  overflow: hidden;
   background: none;
-  padding: 0;
+  display: block;
+  box-sizing: border-box;
 }
 
 .hero.hero1 > div:first-child {
@@ -262,9 +260,23 @@
 /* Responsive tweaks */
 @media (width <= 799px) {
   .hero.hero1 {
-    min-height: 320px;
-    height: 320px;
-    border-radius: 0;
+    min-height: 180px;
+    height: 180px;
+    border-radius: 10px;
+  }
+
+  .hero.hero1 picture,
+  .hero.hero1 img {
+    border-radius: 10px;
+  }
+
+  .hero.hero1 > div:last-child > div {
+    margin-top: 5%;
+  }
+
+  .hero.hero1 > div:last-child > div > h1 {
+    font-size: 1rem;
+    padding: 0.24em 1.1em;
   }
 
   .hero.hero1 > div:last-child h1 {
@@ -275,7 +287,6 @@
   }
 }
 
-/* Responsive adjustments */
 @media (width <= 900px) {
   .hero.hero6 {
     min-height: 320px;
@@ -611,3 +622,15 @@
   background: none;
 }
 
+
+.hero.hero1 {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  height: 520px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: none;
+  display: block;
+  box-sizing: border-box;
+}
