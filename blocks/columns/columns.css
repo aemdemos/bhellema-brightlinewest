@@ -1,4 +1,5 @@
 
+
 /* Base columns selectors at the top for specificity order compliance */
 .columns > div {
   display: flex;
@@ -597,4 +598,91 @@
   padding: 56px 0;
   display: flex;
   justify-content: center;
+}
+
+/* GENERATED CSS */
+
+.columns.columns16 {
+  background: #e9f6f7;
+  padding-top: 32px;
+  padding-bottom: 48px;
+  margin-top: 0;
+  display: block;
+}
+
+.columns.columns16 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+}
+
+.columns.columns16 > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 240px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.columns.columns16 img {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  margin-bottom: 16px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.columns.columns16 h3,
+.columns.columns16 h4 {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #363636;
+  font-weight: 400;
+  margin: 0;
+  max-width: 240px;
+  width: 100%;
+  padding: 0;
+  text-align: left;
+}
+
+.columns.columns16 p {
+  margin: 0;
+  padding: 0;
+}
+
+@media (width <= 900px) {
+  .columns.columns16 > div {
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .columns.columns16 > div > div {
+    max-width: 98vw;
+  }
+
+  .columns.columns16 img {
+    max-width: 98vw;
+  }
+}
+
+/* MERGED SELECTOR FOR .columns.columns16 */
+
+.columns.columns16 {
+  background: #e9f6f7;
+  padding-top: 32px;
+  padding-bottom: 48px;
+  margin-top: 0;
+  display: block;
 }
