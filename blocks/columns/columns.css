@@ -1,3 +1,4 @@
+
 /* Base columns selectors at the top for specificity order compliance */
 .columns > div {
   display: flex;
@@ -483,4 +484,117 @@
   font-size: 1.5rem;
   color: #222;
   display: inline;
+}
+
+/* GENERATED CSS */
+
+.columns.columns15 {
+  background: #f5f5f7;
+  padding: 56px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.columns.columns15 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 36px;
+  max-width: 980px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.columns.columns15 .columns-img-col {
+  flex: 0 0 320px;
+  width: 320px;
+  height: 186px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0;
+}
+
+.columns.columns15 .columns-img-col picture,
+.columns.columns15 .columns-img-col img {
+  width: 320px;
+  height: 186px;
+  border-radius: 14px;
+  object-fit: cover;
+  display: block;
+  background: none;
+  box-shadow: none;
+}
+
+.columns.columns15 > div > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 390px;
+  width: 100%;
+  margin: 0;
+  height: auto;
+}
+
+.columns.columns15 h2 {
+  font-family: Montserrat, var(--heading-font-family), Arial, sans-serif;
+  font-size: 2.25rem;
+  color: #232323;
+  font-weight: 700;
+  line-height: 1.13;
+  margin: 0 0 24px;
+  max-width: 260px;
+  word-break: break-word;
+  letter-spacing: 0;
+}
+
+.columns.columns15 p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #464646;
+  margin: 0;
+  max-width: 390px;
+  text-align: justify;
+}
+
+@media (width <= 900px) {
+  .columns.columns15 > div {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    max-width: 95vw;
+    padding: 24px 0;
+  }
+
+  .columns.columns15 .columns-img-col,
+  .columns.columns15 .columns-img-col picture,
+  .columns.columns15 .columns-img-col img {
+    width: 90vw;
+    max-width: 340px;
+    height: auto;
+    min-height: 180px;
+  }
+
+  .columns.columns15 > div > div:nth-child(2) {
+    height: auto;
+    max-width: 95vw;
+  }
+
+  .columns.columns15 h2,
+  .columns.columns15 p {
+    max-width: 90vw;
+    text-align: center;
+  }
+}
+
+/* MERGED SELECTOR */
+
+.columns.columns15 {
+  background: #f5f5f7;
+  padding: 56px 0;
+  display: flex;
+  justify-content: center;
 }
