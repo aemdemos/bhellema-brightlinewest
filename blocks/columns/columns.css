@@ -142,12 +142,19 @@
   margin: 0;
 }
 
+.columns.columns14 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .columns.columns3 > div > div ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+/* --- Order selectors to fix specificity --- */
 .columns.columns10 li {
   margin: 0 0 8px;
   padding: 0;
@@ -156,12 +163,21 @@
   line-height: 1.4;
 }
 
-.columns.columns10 .columns-img-col li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
+.columns.columns14 ul li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 1.1rem;
+  color: #222;
+  line-height: 1.5;
+  font-family: inherit;
+  font-weight: 400;
+  text-align: justify;
+  text-justify: inter-word;
+  margin-bottom: 40px;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle at 8px 16px, #FFD600 4px, transparent 5px);
+  background-position: 0 12px;
+  background-size: 8px 8px;
 }
 
 .columns.columns3 > div > div ul li {
@@ -169,6 +185,14 @@
   font-size: 16px;
   font-weight: 400;
   font-family: var(--body-font-family), Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.columns.columns10 .columns-img-col li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
 }
@@ -192,7 +216,7 @@
   background: #3A3938;
   color: #fff;
   padding: 32px 48px;
-  font-family: Montserrat, Futura PT, Futura PT Fallback, sans-serif;
+  font-family: Montserrat, "Futura PT", "Futura PT Fallback", sans-serif;
   font-size: 18px;
   font-weight: 400;
   box-sizing: border-box;
@@ -306,6 +330,7 @@
   min-width: 0; /* allow to shrink to fit icons only */
   width: auto;
   margin-left: 0;
+
   /* Ensures social icons are at the visual right edge */
 }
 
@@ -343,121 +368,119 @@
   background: none;
 }
 
-/* Remove duplicate and resolve order: only one .columns.columns10 .columns-img-col li now, placed before .columns.columns10 ul li:last-child, and before .columns.columns3 > div > div ul li */
-.columns.columns10 .columns-img-col li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
+/* --- End duplicate and ordering fixes --- */
+
+.columns.columns14 {
+  background: #fff;
+  position: relative;
+  padding: 80px 0 104px;
 }
 
-.columns.columns3 > div > div ul li {
-  color: #363636;
-  font-size: 16px;
+.columns.columns14::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 24px;
+  background: #EAF6F6;
+}
+
+.columns.columns14 > div > div:first-child {
+  max-width: 900px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.columns.columns14 > div > div:first-child > p:first-child {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #222;
+  display: inline-block;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 32px;
+  padding: 0 12px 6px;
+  background: linear-gradient(to top, #FFD600 65%, transparent 65%);
+  border-radius: 4px;
+}
+
+.columns.columns14 > div > div:first-child > p:nth-child(2) {
+  color: #444;
+  font-size: 1.4rem;
   font-weight: 400;
-  font-family: var(--body-font-family), Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* Responsive stacking for mobile */
-@media (width <= 900px) {
-  .columns.columns5 > div {
-    flex-direction: column;
-    gap: 24px;
-    max-width: 100%;
-    padding: 0 16px;
-  }
-
-  .columns.columns2 > div {
-    flex-direction: column;
-    gap: 24px;
-    align-items: stretch;
-  }
-
-  .columns.columns10 > div {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 28px;
-  }
-
-  .columns.columns3 > div {
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-  }
-
-  .columns.columns3 > div > div {
-    min-width: 0;
-    width: 100%;
-    max-width: 440px;
-    padding: 32px 20px;
-  }
-
-  .columns.columns3::after {
-    margin-top: 28px;
-  }
-
-  .columns.columns5 > div > div {
-    max-width: 100%;
-  }
-
-  .columns.columns5 img,
-  .columns.columns5 picture {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .columns.columns2 {
-    padding: 32px 0;
-  }
-
-  .columns.columns2 .columns-img-col {
-    width: 100%;
-    height: auto;
-    justify-content: flex-start;
-    margin-top: 0;
-  }
-
-  .columns.columns2 .columns-img-col img,
-  .columns.columns2 .columns-img-col picture {
-    width: 100%;
-    height: auto;
-    max-width: 400px;
-    max-height: 400px;
-    margin: 0 auto;
-  }
-
-  .columns.columns10 {
-    padding: 16px;
-  }
-
-  .columns.columns10 .columns-img-col {
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-left: 0;
-    margin-top: 12px;
-  }
+  line-height: 1.6;
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 @media (width >= 900px) {
-  .columns > div {
+  .columns.columns14 > div {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    padding: 0;
   }
 
-  .columns > div > div {
-    flex: 1;
-    order: unset;
+  .columns.columns14 > div > .columns14-options-row {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .columns.columns14 > div > div:nth-child(2),
+  .columns.columns14 > div > div:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 45%;
+    min-width: 320px;
+    max-width: 500px;
+    margin: 0;
+    text-align: left;
+  }
+
+  .columns.columns14 > div > div:nth-child(2) {
+    margin-right: 40px;
+  }
+
+  .columns.columns14 > div > div:nth-child(3) {
+    margin-left: 40px;
+  }
+
+  .columns.columns14 > div > div:first-child {
+    margin-bottom: 24px;
   }
 }
 
-/* ---- GENERATED CSS (from Experiment 4) ---- */
+@media (width <= 899px) {
+  .columns.columns14 > div {
+    flex-direction: column;
+    align-items: center;
+  }
 
-/* merged .columns.columns13 from both snippets */
-.columns.columns13 {
-  background: #ecf4f3;
-  padding: 80px 0;
+  .columns.columns14 > div > div:nth-child(2),
+  .columns.columns14 > div > div:nth-child(3) {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 32px;
+  }
+}
+
+.columns.columns14 ul li strong,
+.columns.columns14 ul li b {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: #222;
+  display: inline;
 }
