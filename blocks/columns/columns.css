@@ -1,6 +1,6 @@
-
-
-/* Base columns selectors at the top for specificity order compliance */
+/*
+ * Columns base structure for all column types
+ */
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -10,14 +10,12 @@
   width: 100%;
 }
 
-/* --- MERGED .columns.columns3 BELOW --- */
+/* --- Columns columns3 --- */
 .columns.columns3 {
   background: transparent;
   padding: 0;
   margin: 0 auto;
 }
-
-/* --- END MERGED .columns.columns3 --- */
 
 .columns.columns3 > div {
   display: flex;
@@ -27,30 +25,34 @@
   gap: 44px;
   width: 100%;
   margin: 0;
+  max-width: 800px;
+  padding: 0;
 }
 
-/* Card styling */
 .columns.columns3 > div > div {
   background: #eaf3f3;
-  border-radius: 14px;
   min-width: 380px;
   max-width: 440px;
-  padding: 52px 36px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 370px;
+  border-radius: 8px;
+  padding: 14px 32px 24px;
+  justify-content: flex-start;
+  margin: 0;
 }
 
-/* Name styling */
 .columns.columns3 > div > div > h4 {
   color: #363636;
   font-size: 22px;
   font-weight: 700;
-  margin: 0 0 20px;
-  font-family: var(--heading-font-family), Arial, sans-serif;
+  margin: 0 0 10px;
+  font-family: var(--heading-font-family, Futura PT, Futura PT Fallback, sans-serif);
   letter-spacing: 0;
   line-height: 1.2;
+  text-align: left;
 }
 
 .columns.columns3 > div > div ul {
@@ -59,28 +61,45 @@
   padding: 0;
 }
 
-/* --- Order selectors to fix specificity --- */
 .columns.columns3 > div > div ul li {
   color: #363636;
   font-size: 16px;
   font-weight: 400;
-  font-family: var(--body-font-family), Arial, sans-serif;
+  font-family: var(--body-font-family, Futura PT, Futura PT Fallback, sans-serif);
   margin: 0;
   padding: 0;
+  text-align: left;
 }
 
-/* Dot indicator below cards */
 .columns.columns3::after {
   display: block;
   width: 10px;
   height: 10px;
-  background: #757575;
+  background: #767676;
   border-radius: 50%;
-  margin: 36px auto 0;
+  margin: 8px auto 0;
   content: "";
 }
 
-/* ... rest of Base CSS unchanged ... */
+@media (width <= 900px) {
+  .columns.columns3 > div {
+    flex-direction: column;
+    gap: 18px;
+    max-width: 95vw;
+    margin-top: 2px;
+  }
+  .columns.columns3 > div > div {
+    width: 100%;
+    max-width: 370px;
+    margin: 0 auto;
+  }
+}
+
+/* --- Columns columns5 --- */
+.columns.columns5 {
+  background: #fff;
+  padding: 0;
+}
 
 .columns.columns5 > div {
   display: flex;
@@ -94,31 +113,6 @@
   box-sizing: border-box;
 }
 
-.columns.columns2 > div {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 38px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.columns.columns10 > div {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start; /* TOP align all columns and social */
-  justify-content: flex-start;
-  gap: 48px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .columns.columns5 > div > div {
   flex: 1 1 0;
   min-width: 0;
@@ -128,124 +122,6 @@
   align-items: center;
   padding: 0;
   box-sizing: border-box;
-}
-
-.columns.columns10 > div > div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 120px;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Name styling */
-.columns.columns2 > div > div:first-child {
-  flex: 1 1 0;
-  max-width: 480px;
-  text-align: left;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding-top: 0;
-  margin-top: 0;
-}
-
-.columns.columns2 > div > div:first-child h2 {
-  color: #333;
-  font-size: 2.5rem;
-  font-family: var(--heading-font-family);
-  font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 32px;
-  line-height: 1.1;
-}
-
-.columns.columns2 > div > div:first-child p {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #555;
-  margin: 0;
-  max-width: 40em;
-}
-
-/* Remove bullets and fix spacing */
-.columns.columns10 ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.columns.columns14 ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.columns.columns10 li {
-  margin: 0 0 8px;
-  padding: 0;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.4;
-}
-
-.columns.columns14 ul li {
-  position: relative;
-  padding-left: 24px;
-  font-size: 1.1rem;
-  color: #222;
-  line-height: 1.5;
-  font-family: inherit;
-  font-weight: 400;
-  text-align: justify;
-  text-justify: inter-word;
-  margin-bottom: 40px;
-  background-repeat: no-repeat;
-  background-image: radial-gradient(circle at 8px 16px, #FFD600 4px, transparent 5px);
-  background-position: 0 12px;
-  background-size: 8px 8px;
-}
-
-.columns.columns10 .columns-img-col li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-}
-
-.columns.columns10 ul li:last-child {
-  margin-bottom: 0;
-}
-
-.columns.columns10 {
-  background: #3A3938;
-  color: #fff;
-  padding: 32px 48px;
-  font-family: Montserrat, "Futura PT", "Futura PT Fallback", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.columns.columns10 h3 {
-  color: #fff;
-  font-size: 18px;
-  font-weight: 700;
-  margin: 0 0 10px;
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-}
-
-.columns.columns5 {
-  background: #fff;
-  margin: 0 auto;
-  width: 100%;
-  padding: 0;
 }
 
 .columns.columns5 img,
@@ -287,6 +163,7 @@
   color: #fff;
 }
 
+/* --- Columns columns2 --- */
 .columns.columns2 {
   background: #fff;
   padding: 56px 0;
@@ -294,7 +171,49 @@
   justify-content: center;
 }
 
-/* Right image column: align image to top of the flex row, nudge image up */
+.columns.columns2 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 38px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.columns.columns2 > div > div:first-child {
+  flex: 1 1 0;
+  max-width: 480px;
+  text-align: left;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.columns.columns2 > div > div:first-child h2 {
+  color: #333;
+  font-size: 2.5rem;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 32px;
+  line-height: 1.1;
+}
+
+.columns.columns2 > div > div:first-child p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+  max-width: 40em;
+}
+
 .columns.columns2 .columns-img-col {
   flex: 0 0 400px;
   width: 400px;
@@ -330,6 +249,75 @@
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+}
+
+/* --- Columns columns10 --- */
+.columns.columns10 {
+  background: #3A3938;
+  color: #fff;
+  padding: 32px 48px;
+  font-family: Montserrat, Futura PT, Futura PT Fallback, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.columns.columns10 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* TOP align all columns and social */
+  justify-content: flex-start;
+  gap: 48px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.columns.columns10 > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 120px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.columns.columns10 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.columns.columns10 li {
+  margin: 0 0 8px;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.columns.columns10 .columns-img-col li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.columns.columns10 ul li:last-child {
+  margin-bottom: 0;
+}
+
+.columns.columns10 h3 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
 }
 
 .columns.columns10 .columns-img-col {
@@ -375,8 +363,7 @@
   background: none;
 }
 
-/* --- End duplicate and ordering fixes --- */
-
+/* --- Columns columns14 --- */
 .columns.columns14 {
   background: #fff;
   position: relative;
@@ -430,7 +417,6 @@
     align-items: center;
     padding: 0;
   }
-
   .columns.columns14 > div > .columns14-options-row {
     display: flex;
     flex-direction: row;
@@ -441,7 +427,6 @@
     max-width: 1100px;
     margin: 0 auto;
   }
-
   .columns.columns14 > div > div:nth-child(2),
   .columns.columns14 > div > div:nth-child(3) {
     display: flex;
@@ -454,15 +439,12 @@
     margin: 0;
     text-align: left;
   }
-
   .columns.columns14 > div > div:nth-child(2) {
     margin-right: 40px;
   }
-
   .columns.columns14 > div > div:nth-child(3) {
     margin-left: 40px;
   }
-
   .columns.columns14 > div > div:first-child {
     margin-bottom: 24px;
   }
@@ -473,7 +455,6 @@
     flex-direction: column;
     align-items: center;
   }
-
   .columns.columns14 > div > div:nth-child(2),
   .columns.columns14 > div > div:nth-child(3) {
     display: block;
@@ -483,6 +464,29 @@
   }
 }
 
+.columns.columns14 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.columns.columns14 ul li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 1.1rem;
+  color: #222;
+  line-height: 1.5;
+  font-family: inherit;
+  font-weight: 400;
+  text-align: justify;
+  text-justify: inter-word;
+  margin-bottom: 40px;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle at 8px 16px, #FFD600 4px, transparent 5px);
+  background-position: 0 12px;
+  background-size: 8px 8px;
+}
+
 .columns.columns14 ul li strong,
 .columns.columns14 ul li b {
   font-weight: bold;
@@ -490,88 +494,4 @@
   font-size: 1.5rem;
   color: #222;
   display: inline;
-}
-
-/* GENERATED CSS */
-
-.columns.columns3 > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 32px;
-  max-width: 800px;
-  margin: 2px auto 0; /* Tighter top margin for more compact block */
-  padding: 0;
-}
-
-.columns.columns3 > div > div {
-  background: #eaf3f3;
-  border-radius: 8px;
-  width: 370px;
-  padding: 14px 32px 24px; /* Less top padding for even more compact appearance */
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin: 0;
-}
-
-.columns.columns3 > div > div > h4 {
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #363636;
-  font-family: var(--heading-font-family, "Futura PT", "Futura PT Fallback", "sans-serif");
-  margin: 0 0 10px;
-  letter-spacing: 0;
-  text-align: left;
-}
-
-.columns.columns3 > div > div ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.columns.columns3 > div > div ul li {
-  color: #363636;
-  font-size: 16px;
-  font-weight: 400;
-  font-family: var(--body-font-family, "Futura PT", "Futura PT Fallback", "sans-serif");
-  margin: 0;
-  padding: 0;
-  text-align: left;
-}
-
-.columns.columns3::after {
-  display: block;
-  width: 10px;
-  height: 10px;
-  background: #767676;
-  border-radius: 50%;
-  margin: 8px auto 0; /* Slightly tighter spacing under cards */
-}
-
-@media (width <= 900px) {
-  .columns.columns3 > div {
-    flex-direction: column;
-    gap: 18px;
-    max-width: 95vw;
-    margin-top: 2px;
-  }
-
-  .columns.columns3 > div > div {
-    width: 100%;
-    max-width: 370px;
-    margin: 0 auto;
-  }
-}
-
-/* MERGED RESULT FOR .columns.columns3 */
-.columns.columns3 {
-  background: transparent;
-  padding: 0;
-  margin: 0 auto;
 }
