@@ -686,3 +686,10 @@
   margin-top: 0;
   display: block;
 }
+
+/* MERGED SELECTOR FOR .columns.columns22 */
+.columns.columns22 {
+  padding: 0;
+  margin: 0;
+  background: none;
+}
