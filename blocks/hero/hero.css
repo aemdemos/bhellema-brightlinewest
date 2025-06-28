@@ -41,15 +41,6 @@
   height: 100%;
 }
 
-.hero.hero6 picture,
-.hero.hero6 img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 36px 36px 0 0;
-}
-
 .hero.hero1 {
   position: relative;
   display: flex;
@@ -75,13 +66,16 @@
   pointer-events: none;
 }
 
-.hero.hero9 picture,
-.hero.hero9 picture img {
-  display: block;
+.hero.hero1 > div:last-child {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
   width: 100%;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 32px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
 }
 
 .hero.hero1 > div:first-child picture,
@@ -94,6 +88,45 @@
   min-height: 100%;
 }
 
+.hero.hero1 > div:last-child h1 {
+  background: #3D963A;
+  color: #fff;
+  font-family: var(--heading-font-family), sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 1.1;
+  text-align: center;
+  padding: 0.17em 1.4em;
+  border-radius: 10px;
+  margin: 0;
+  display: inline-block;
+  pointer-events: auto;
+  box-shadow: none;
+  letter-spacing: 0.01em;
+  position: relative;
+  top: -5%;
+}
+
+.hero.hero6 {
+  position: relative;
+  width: 100%;
+  min-height: 540px;
+  height: 800px;
+  border-radius: 36px 36px 0 0;
+  overflow: hidden;
+  background: none;
+  padding: 0;
+}
+
+.hero.hero6 picture,
+.hero.hero6 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 36px 36px 0 0;
+}
+
 .hero.hero6 > div:first-child {
   width: 100%;
   height: 100%;
@@ -102,36 +135,6 @@
   display: block;
 }
 
-/* --- HERO 9 SELECTORS --- */
-.hero.hero9 {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  min-height: 720px;
-  border-radius: 32px;
-  overflow: hidden;
-  background: transparent;
-  padding: 0;
-}
-
-.hero.hero9 > div:first-child {
-  position: relative;
-  width: 100%;
-  min-height: 420px;
-}
-
-.hero.hero9 > div:last-child {
-  background: #fff;
-  width: 100%;
-  display: block;
-  padding: 0.05rem 0 0.28rem;
-  margin: 0;
-  border-radius: 0 0 32px 32px;
-  box-sizing: border-box;
-}
-
-/* --- HERO 6 CONTINUED --- */
 .hero.hero6 > div:nth-child(2) {
   position: absolute;
   inset: 0;
@@ -165,18 +168,6 @@
   box-sizing: border-box;
 }
 
-.hero.hero1 > div:last-child {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none;
-}
-
 .hero.hero6 h1 {
   color: #fff;
   font-family: var(--heading-font-family), Arial, sans-serif;
@@ -189,26 +180,44 @@
   width: 100%;
 }
 
-.hero.hero1 > div:last-child h1 {
-  background: #3D963A;
-  color: #fff;
-  font-family: var(--heading-font-family), sans-serif;
-  font-weight: 800;
-  font-size: 2rem;
-  line-height: 1.1;
-  text-align: center;
-  padding: 0.17em 1.4em;
-  border-radius: 10px;
-  margin: 0;
-  display: inline-block;
-  pointer-events: auto;
-  box-shadow: none;
-  letter-spacing: 0.01em;
+/* --- HERO 9 SELECTORS --- */
+.hero.hero9 {
   position: relative;
-  top: -5%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 720px;
+  border-radius: 32px;
+  overflow: hidden;
+  background: transparent;
+  padding: 0;
 }
 
-/* --- PRESS RELEASES BUTTON --- */
+.hero.hero9 > div:first-child {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+}
+
+.hero.hero9 picture,
+.hero.hero9 picture img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 32px;
+}
+
+.hero.hero9 > div:last-child {
+  background: #fff;
+  width: 100%;
+  display: block;
+  padding: 0.05rem 0 0.28rem;
+  margin: 0;
+  border-radius: 0 0 32px 32px;
+  box-sizing: border-box;
+}
+
 .hero.hero9 h1#press-releases {
   position: absolute;
   left: 50%;
@@ -317,15 +326,142 @@
     font-size: 1.02rem;
     padding: 0;
   }
+
+  .hero.hero11 {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 32px 0;
+    min-height: unset;
+  }
+
+  .hero.hero11 > div:last-child {
+    max-width: 96vw;
+    width: 96vw;
+    padding: 32px 16px 24px;
+    min-width: 0;
+  }
+
+  .hero.hero11 > div:first-child {
+    max-width: 96vw;
+    width: 96vw;
+    min-width: 0;
+    justify-content: center;
+    min-height: 160px;
+  }
+
+  .hero.hero11 picture,
+  .hero.hero11 img {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 120px;
+  }
+
+  .hero.hero11 > div:first-child:empty::after {
+    min-width: 120px;
+    min-height: 120px;
+  }
 }
 
-.hero.hero6 {
-  position: relative;
+.hero.hero11 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 56px;
+  background: #e8f2f1;
+  min-height: 600px;
+  padding: 56px 0;
   width: 100%;
-  min-height: 540px;
-  height: 800px;
-  border-radius: 36px 36px 0 0;
-  overflow: hidden;
-  background: none;
-  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero.hero11 > div:first-child {
+  flex: 1 1 520px;
+  order: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 420px;
+  max-width: 576px;
+  min-height: 320px;
+  background: rgb(40 60 80 / 1%);
+}
+
+.hero.hero11 > div:first-child:empty::after {
+  content: "";
+  display: block;
+  min-width: 420px;
+  min-height: 320px;
+}
+
+.hero.hero11 picture,
+.hero.hero11 img {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  min-width: 320px;
+  min-height: 220px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.hero.hero11 > div:last-child {
+  flex: 0 1 500px;
+  order: 1;
+  background: #fff;
+  border-radius: 20px;
+  padding: 56px 64px 48px 56px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 340px;
+  max-width: 500px;
+  box-shadow: none;
+}
+
+.hero.hero11 h6 {
+  color: #036;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  margin-bottom: 24px;
+  margin-top: 0;
+  text-transform: none;
+}
+
+.hero.hero11 h2 {
+  color: #363636;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.hero.hero11 p {
+  color: #222;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  margin-top: 0;
+}
+
+.hero.hero11 .button-container {
+  margin-top: 8px;
+}
+
+.hero.hero11 .button {
+  background: #036;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 12px 32px;
+  text-decoration: none;
+  border: none;
+  box-shadow: none;
 }
