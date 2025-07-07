@@ -1,20 +1,37 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find left block columns (the 3 button list columns)
+  // Find the left and right column containers
   const left = element.querySelector('.blte-footer__first-row-left');
-  let leftCols = [];
-  if (left) {
-    leftCols = Array.from(left.querySelectorAll(':scope > .blte-footer__first-row-left-column'));
-  }
-  // Find the right block (social icons)
   const right = element.querySelector('.blte-footer__first-row-right');
-  const cols = [...leftCols, ...(right ? [right] : [])];
-  if (cols.length === 0) return;
-  // Header row should be a single cell only
-  const cells = [
-    ['Columns (columns10)'],
-    cols
-  ];
-  const table = WebImporter.DOMUtils.createTable(cells, document);
-  element.replaceWith(table);
+
+  // Get all left columns
+  let leftColumns = [];
+  if (left) {
+    leftColumns = Array.from(left.querySelectorAll(':scope > .blte-footer__first-row-left-column'));
+  }
+
+  // The right side is a single column (if present)
+  let rightColumn = null;
+  if (right) {
+    rightColumn = right;
+  }
+
+  // Compose the second row: each column's root element as a cell
+  const secondRow = [];
+  leftColumns.forEach(col => secondRow.push(col));
+  if (rightColumn) {
+    secondRow.push(rightColumn);
+  }
+
+  // The header row must contain exactly one cell
+  const headerRow = ['Columns (columns10)'];
+
+  // Only create the table if there's at least one column for the second row
+  if (secondRow.length > 0) {
+    const table = WebImporter.DOMUtils.createTable([
+      headerRow, // single cell header row
+      secondRow  // as many cells as needed
+    ], document);
+    element.replaceWith(table);
+  }
 }

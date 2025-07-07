@@ -3,38 +3,44 @@ export default function parse(element, { document }) {
   // Find the main accordion block
   const accordion = element.querySelector('.blte-accordion');
   if (!accordion) return;
-  
+
   // Get all accordion items
-  const items = Array.from(accordion.querySelectorAll(':scope > div .blte-accordion-item'));
+  const items = accordion.querySelectorAll('.blte-accordion-item');
+  const rows = [];
 
-  // Set table header row exactly as required
-  const rows = [['Accordion (accordion7)']];
+  // Header row as specified in the markdown example
+  rows.push(['Accordion (accordion7)']);
 
-  items.forEach(item => {
-    // Title cell: the actual h3 as per semantic meaning
-    let titleCell = null;
-    const button = item.querySelector('.blte-accordion-item__title');
-    if (button) {
-      // Use the first h3 inside the button if available, else fallback to button
-      const h3 = button.querySelector('h3');
-      titleCell = h3 || button;
+  // For each accordion item, extract title and content
+  items.forEach((item) => {
+    // Title cell: get the .blte-title element (preserve HTML formatting)
+    let titleCell = '';
+    const titleEl = item.querySelector('.blte-title');
+    if (titleEl) {
+      titleCell = titleEl;
+    } else {
+      // Fallback: try button text
+      const btn = item.querySelector('button');
+      if (btn) {
+        titleCell = btn.textContent.trim();
+      } else {
+        titleCell = '';
+      }
     }
-    // If neither h3 nor button found, fallback to item heading
-    if (!titleCell) {
-      const h3 = item.querySelector('h3');
-      if (h3) titleCell = h3;
+
+    // Content cell: use the .blte-accordion-item__content element, reference directly
+    let contentCell = '';
+    const contentEl = item.querySelector('.blte-accordion-item__content');
+    if (contentEl) {
+      contentCell = contentEl;
+    } else {
+      contentCell = '';
     }
-    // Content cell: the entire accordion-content region, preserving structure
-    const contentCell = item.querySelector('.blte-accordion-item__content');
-    // Only add row if both title and content exist
-    if (titleCell && contentCell) {
-      rows.push([titleCell, contentCell]);
-    }
+
+    rows.push([titleCell, contentCell]);
   });
 
-  // Only replace with block if there's at least one item
-  if (rows.length > 1) {
-    const block = WebImporter.DOMUtils.createTable(rows, document);
-    element.replaceWith(block);
-  }
+  // Create and replace with block table
+  const table = WebImporter.DOMUtils.createTable(rows, document);
+  element.replaceWith(table);
 }

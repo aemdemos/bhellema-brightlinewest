@@ -1,42 +1,45 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // 1. Find the hero section
-  const hero = element.querySelector('.blte-hero');
-  if (!hero) return;
+  // Find the .blte-hero (contains both image and text)
+  const blteHero = element.querySelector('.blte-hero');
+  if (!blteHero) return;
 
-  // 2. Find the picture (background image)
-  let picture = null;
-  const imageContainer = hero.querySelector('.blte-hero__image');
-  if (imageContainer) {
-    picture = imageContainer.querySelector('picture') || imageContainer;
+  // --- Extract background image block (picture or fallback to whole image div) ---
+  let bgContent = '';
+  const imageDiv = blteHero.querySelector('.blte-hero__image');
+  if (imageDiv) {
+    // Prefer picture if present
+    const picture = imageDiv.querySelector('picture');
+    bgContent = picture ? picture : imageDiv;
   }
 
-  // 3. Collect all text content from hero text area
-  let textContent = [];
-  const textContainer = hero.querySelector('.blte-hero__text');
-  if (textContainer) {
-    // We want to collect headings, paragraphs, and other visible text elements in correct order
-    // We'll include any direct children of the text wrapper that are elements
-    let wrapper = textContainer.querySelector('.blte-hero__text-wrapper') || textContainer;
-    // Use childNodes so we preserve order and all relevant nodes
-    textContent = Array.from(wrapper.childNodes).filter((node) => {
-      return (
-        node.nodeType === 1 && // element
-        (node.tagName.match(/^H[1-6]$/) || node.tagName === 'P' || node.classList.contains('blte-text') || node.classList.contains('blte-hero__text-value-span'))
-      ) || (
-        node.nodeType === 3 && node.textContent.trim().length > 0 // text node
-      );
+  // --- Extract text block (headings etc.) ---
+  let textContent = '';
+  const textDiv = blteHero.querySelector('.blte-hero__text');
+  if (textDiv) {
+    // If it has a wrapper, use its children, else use all children
+    const wrapper = textDiv.querySelector('.blte-hero__text-wrapper');
+    if (wrapper) {
+      // Get all nodes inside wrapper
+      textContent = Array.from(wrapper.childNodes);
+    } else {
+      textContent = Array.from(textDiv.childNodes);
+    }
+    // Remove empty text nodes
+    textContent = textContent.filter(node => {
+      // Keep elements, and text nodes with content
+      return node.nodeType !== Node.TEXT_NODE || node.textContent.trim().length > 0;
     });
-    // Fallback: If nothing found, use the textContainer
-    if (textContent.length === 0) textContent = [textContainer];
+    // If only one node, don't use an array
+    if (textContent.length === 1) textContent = textContent[0];
   }
 
-  // 4. Build block table
-  const rows = [];
-  rows.push(['Hero (hero30)']);
-  rows.push([picture || '']);
-  rows.push([textContent.length > 1 ? textContent : textContent[0] || '']);
-
-  const table = WebImporter.DOMUtils.createTable(rows, document);
+  // --- Table structure: header, image row, text row ---
+  const cells = [
+    ['Hero (hero30)'],
+    [bgContent],
+    [textContent]
+  ];
+  const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

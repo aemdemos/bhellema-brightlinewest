@@ -1,46 +1,41 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find column wrappers. These are the immediate children of the deepest aem-Grid.
-  let grid = element.querySelector(':scope > .blte-sectioncontainer > .aem-Grid');
-  if (!grid) grid = element.querySelector('.aem-Grid');
-  let wrappers = [];
-  if (grid) {
-    wrappers = Array.from(grid.querySelectorAll(':scope > .blte-sectioncontainer__wrapper'));
-    // Fallback: for some structures wrappers may be nested
-    if (wrappers.length < 2) {
-      wrappers = Array.from(grid.children).filter(el => el.classList.contains('blte-sectioncontainer__wrapper'));
-    }
-  }
-  if (wrappers.length < 2) {
-    // Fallback: get all wrappers in the element
-    wrappers = Array.from(element.querySelectorAll('.blte-sectioncontainer__wrapper'));
+  // Find the inner aem-Grid with two columns
+  const innerGrid = element.querySelector('.blte-sectioncontainer > .aem-Grid');
+  if (!innerGrid) return;
+  // Find the two column wrappers (each has another .blte-sectioncontainer inside)
+  const colWrappers = Array.from(innerGrid.children).filter(c => c.classList.contains('blte-sectioncontainer__wrapper'));
+  if (colWrappers.length < 2) return;
+
+  // LEFT COLUMN: image(s)
+  // Get innermost .blte-sectioncontainer > .aem-Grid in left col
+  let leftColGrid = colWrappers[0].querySelector('.blte-sectioncontainer > .aem-Grid');
+  if (!leftColGrid) leftColGrid = colWrappers[0];
+  // Gather all images (prefer .cmp-image, fallback to <img>), take all relevant image containers to preserve structure
+  const imageContainers = Array.from(leftColGrid.querySelectorAll(':scope > .image'));
+  let leftColContent;
+  if (imageContainers.length) {
+    leftColContent = imageContainers.length === 1 ? imageContainers[0] : imageContainers;
+  } else {
+    // fallback: all images
+    const imgs = Array.from(leftColGrid.querySelectorAll('img'));
+    leftColContent = imgs.length === 1 ? imgs[0] : imgs;
   }
 
-  // Heuristics: One wrapper contains .cmp-image (image(s)), one contains .blte-text (text)
-  let imageWrapper = wrappers.find(wrap => wrap.querySelector('.cmp-image'));
-  let textWrapper = wrappers.find(wrap => wrap.querySelector('.blte-text'));
+  // RIGHT COLUMN: text content
+  let rightColSection = colWrappers[1].querySelector('.blte-sectioncontainer');
+  if (!rightColSection) rightColSection = colWrappers[1];
+  // Find text wrapper
+  let textWrapper = rightColSection.querySelector('.blte-text__wrapper .blte-text');
+  if (!textWrapper) textWrapper = rightColSection;
 
-  // Image cell: collect all cmp-image blocks
-  let imageCell = '';
-  if (imageWrapper) {
-    const images = Array.from(imageWrapper.querySelectorAll('.cmp-image'));
-    if (images.length === 1) imageCell = images[0];
-    else if (images.length > 1) imageCell = images;
-  }
-  // Text cell: get main .blte-text element
-  let textCell = '';
-  if (textWrapper) {
-    const text = textWrapper.querySelector('.blte-text');
-    textCell = text ? text : textWrapper;
-  }
+  // Prepare table header (block name in the first cell, empty second cell!)
+  const headerRow = ['Columns (columns13)', ''];
+  // Second row: [LEFT, RIGHT]
+  const contentRow = [leftColContent, textWrapper];
+  const cells = [headerRow, contentRow];
 
-  // Compose the table
-  // HEADER: one cell, just as in the markdown example
-  // CONTENT: two cells (columns)
-  const cells = [
-    ['Columns (columns13)'],
-    [imageCell, textCell],
-  ];
+  // Create and replace
   const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

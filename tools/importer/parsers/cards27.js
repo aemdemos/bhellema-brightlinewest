@@ -1,42 +1,30 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Block header row as in the markdown example (single column)
-  const headerRow = ['Cards (cards27)'];
+  // Header: must be an array with a single cell
+  const cells = [
+    ['Cards (cards27)']
+  ];
 
-  // Prepare card rows
-  const cardRows = [];
-  const itemsWrapper = element.querySelector('.blte-teasers-list__items-wrapper');
-  const ul = itemsWrapper && itemsWrapper.querySelector('ul');
+  // Find the UL containing the list of cards
+  const ul = element.querySelector('ul.blte-teasers-list__items');
   if (ul) {
     ul.querySelectorAll(':scope > li').forEach((li) => {
-      // IMAGE: .blte-teaser-v2__image picture img
+      // Image (picture > img)
       let img = null;
-      const picture = li.querySelector('.blte-teaser-v2__image picture');
-      if (picture) {
-        img = picture.querySelector('img');
+      const pic = li.querySelector('picture');
+      if (pic) {
+        const image = pic.querySelector('img');
+        if (image) img = image;
       }
-
-      // TEXT CELL: include any heading, description, CTA (Download Image)
-      const textCellContent = [];
-      // There is no heading or description in this HTML, only a CTA link
-      // But code is resilient if those are added in future
-      // Try to extract title/heading if present (none in this markup)
-      // Try description (none in this markup)
-      // Get CTA link
-      const cta = li.querySelector('.blte-teaser-v2__description a');
-      if (cta) {
-        textCellContent.push(cta);
-      }
-      // Always provide at least the CTA, or empty string if none
-      cardRows.push([
-        img,
-        textCellContent.length ? textCellContent : ''
-      ]);
+      // Text cell: just CTA (Download Image link) for this content
+      // If there is additional text in other variants, it would go here
+      const textFrag = document.createDocumentFragment();
+      const cta = li.querySelector('a[href]');
+      if (cta) textFrag.appendChild(cta);
+      cells.push([img, textFrag]);
     });
   }
-
-  // Table: header row (one column), then each card row (two columns)
-  const cells = [headerRow, ...cardRows];
+  // Replace element with block table
   const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

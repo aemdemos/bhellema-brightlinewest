@@ -1,36 +1,37 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Block table header as specified exactly in the sample
-  const headerRow = ['Hero (hero1)'];
+  // 1. Find the actual hero container
+  // The hero block is within .blte-hero__wrapper or deeper
+  const heroWrapper = element.querySelector('.blte-hero__wrapper, [data-cmp-react="HeroImage"]') || element;
+  // Find the main hero container
+  const hero = heroWrapper.querySelector('.blte-hero') || heroWrapper.querySelector('[data-cmp-react="HeroImage"]') || heroWrapper;
 
-  // Extract the hero image (use <picture> if available, fallback to <img>)
-  let heroImage = '';
-  const heroImageContainer = element.querySelector('.blte-hero__image');
-  if (heroImageContainer) {
-    const pic = heroImageContainer.querySelector('picture');
+  // 2. Image row: get the <picture> element (background image)
+  let imageCell = '';
+  const imageDiv = hero.querySelector('.blte-hero__image');
+  if (imageDiv) {
+    const pic = imageDiv.querySelector('picture');
     if (pic) {
-      heroImage = pic;
+      imageCell = pic;
     } else {
-      const img = heroImageContainer.querySelector('img');
-      if (img) heroImage = img;
+      imageCell = imageDiv;
     }
   }
 
-  // Extract the hero text content block (heading, subheading, etc.)
-  let textContent = '';
-  const textContainer = element.querySelector('.blte-hero__text');
-  if (textContainer) {
-    textContent = textContainer;
+  // 3. Text row: get the hero text
+  let textCell = '';
+  const textDiv = hero.querySelector('.blte-hero__text');
+  if (textDiv) {
+    textCell = textDiv;
   }
 
-  // Build the table as per requirements: 1 column, 3 rows
-  const rows = [
-    headerRow,
-    [heroImage],
-    [textContent],
+  // 4. Compose the table exactly as the spec (single column, 3 rows)
+  const cells = [
+    ['Hero (hero1)'],
+    [imageCell],
+    [textCell],
   ];
 
-  // Create table and replace the original element
-  const table = WebImporter.DOMUtils.createTable(rows, document);
+  const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

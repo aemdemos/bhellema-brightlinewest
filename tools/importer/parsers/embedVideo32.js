@@ -1,43 +1,45 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Compose all relevant content from the source html (video + any text)
-  const content = [];
-  // Include any text nodes or elements in order
-  element.childNodes.forEach((node) => {
-    if (node.nodeType === Node.ELEMENT_NODE) {
-      content.push(node);
-    } else if (node.nodeType === Node.TEXT_NODE) {
-      const text = node.textContent.trim();
-      if (text) {
-        const p = document.createElement('p');
-        p.textContent = text;
-        content.push(p);
-      }
-    }
+  // Header row exactly matches the block name 'Embed'
+  const headerRow = ['Embed'];
+
+  // Collect all direct child nodes (elements and non-empty text nodes)
+  const contentNodes = Array.from(element.childNodes).filter(node => {
+    if (node.nodeType === Node.ELEMENT_NODE) return true;
+    if (node.nodeType === Node.TEXT_NODE && node.textContent.trim().length > 0) return true;
+    return false;
   });
-  // If the video contains a video file, add a link to the file below
+
+  // If there is a <video> tag, also extract its <source> and create a link beneath
   const video = element.querySelector('video');
-  let videoLink = null;
+  let urlLink = null;
   if (video) {
+    let src = '';
     const source = video.querySelector('source');
     if (source && source.getAttribute('src')) {
-      // Make an absolute URL
+      src = source.getAttribute('src');
+    } else if (video.getAttribute('src')) {
+      src = video.getAttribute('src');
+    }
+    if (src) {
+      // Convert to absolute URL if needed
       const a = document.createElement('a');
-      const temp = document.createElement('a');
-      temp.href = source.getAttribute('src');
-      a.href = temp.href;
-      a.textContent = temp.href;
-      videoLink = a;
+      a.href = src;
+      a.textContent = a.href;
+      urlLink = a;
     }
   }
-  if (videoLink) {
-    content.push(document.createElement('br'));
-    content.push(videoLink);
+
+  // Prepare the cell: all original content, then (if present) the link
+  let cellContent = contentNodes;
+  if (urlLink) {
+    // Add a line break between video and link if both present
+    cellContent = [...contentNodes, document.createElement('br'), urlLink];
   }
-  // Build table: header, then single column of all content
+
   const cells = [
-    ['Embed'],
-    [content]
+    headerRow,
+    [cellContent]
   ];
   const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);

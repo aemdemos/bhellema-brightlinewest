@@ -1,58 +1,32 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // 1. Table header row must match example
-  const headerRow = ['Accordion (accordion36)'];
-  const rows = [headerRow];
+  // Find the accordion block root
+  const accordionRoot = element.querySelector('.blte-accordion');
+  if (!accordionRoot) return;
 
-  // 2. Locate main accordion container
-  // The accordion block may be nested
-  let accordionRoot = element.querySelector('.blte-accordion');
-  if (!accordionRoot) accordionRoot = element;
+  // Get all the accordion items in order
+  const items = Array.from(accordionRoot.querySelectorAll(':scope > div .blte-accordion-item'));
+  const accordionItems = items.length > 0 ? items : Array.from(accordionRoot.querySelectorAll('.blte-accordion-item'));
 
-  // 3. Select all accordion items
-  const itemEls = accordionRoot.querySelectorAll('.blte-accordion-item');
-  itemEls.forEach((itemEl) => {
-    // a. Title cell
-    // - The question button contains the title, and inside there's a .blte-title h3
-    let titleNode = null;
-    const btn = itemEl.querySelector('.blte-accordion-item__title');
-    if (btn) {
-      const h3 = btn.querySelector('.blte-title');
-      // Use h3 element directly if present to retain heading level
-      if (h3) {
-        titleNode = h3;
-      } else {
-        // fallback: use button textContent as a <span>
-        const span = document.createElement('span');
-        span.textContent = btn.textContent.trim();
-        titleNode = span;
-      }
-    } else {
-      // fallback: use .blte-accordion-item__title__element or item text
-      const fallbackTitle = itemEl.querySelector('.blte-accordion-item__title__element');
-      if (fallbackTitle) {
-        titleNode = fallbackTitle;
-      } else {
-        const span = document.createElement('span');
-        span.textContent = '';
-        titleNode = span;
-      }
+  // Prepare the table rows
+  const rows = [];
+  rows.push(['Accordion (accordion36)']); // Exact header as required
+
+  accordionItems.forEach(item => {
+    // Title cell: Use the most meaningful heading element inside the button
+    let titleEl = item.querySelector('.blte-accordion-item__title .blte-title');
+    if (!titleEl) {
+      // Fallback to button itself if heading missing
+      const btn = item.querySelector('.blte-accordion-item__title');
+      titleEl = btn ? btn : document.createElement('div');
     }
 
-    // b. Content cell
-    let contentNode = itemEl.querySelector('.blte-accordion-item__content');
-    if (contentNode) {
-      // The content node contains all answer content and is hidden by default
-      // Reference existing node: do NOT clone, so it is moved into block
-      contentNode.removeAttribute('hidden');
-    } else {
-      // fallback: empty
-      contentNode = document.createTextNode('');
-    }
-    // 4. Push row: [title, content]
-    rows.push([titleNode, contentNode]);
+    // Content cell: The entire content block (not its textContent, but the actual node)
+    let contentPanel = item.querySelector('.blte-accordion-item__content');
+    // If the content is deeply wrapped, reference the full contentPanel as is (the block table will flatten it)
+    rows.push([titleEl, contentPanel]);
   });
 
-  const table = WebImporter.DOMUtils.createTable(rows, document);
-  element.replaceWith(table);
+  const block = WebImporter.DOMUtils.createTable(rows, document);
+  element.replaceWith(block);
 }
