@@ -1,57 +1,44 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find the main grid containing the columns
+  // Find the main grid container
   const grid = element.querySelector('.aem-Grid');
-  let columnElements = [];
+  if (!grid) return;
 
-  // Try to find the main content columns
-  if (grid) {
-    columnElements = Array.from(grid.children).filter(
-      (el) => el.classList && el.className.includes('aem-GridColumn')
-    );
-  } else {
-    columnElements = Array.from(element.children);
-  }
+  const gridChildren = Array.from(grid.children);
 
-  // For this layout, there are two main columns: text (left), image (right)
-  // Find the column with the most text and the one with an image
-  let leftContent = null;
-  let rightContent = null;
-
-  if (columnElements.length === 2) {
-    // Assume left is text, right is image
-    leftContent = columnElements[0];
-    rightContent = columnElements[1];
-  } else {
-    // Heuristic: find the one with the most text for left, image for right
-    leftContent = columnElements
-      .slice()
-      .sort((a, b) => (b.innerText || '').length - (a.innerText || '').length)[0];
-    rightContent = columnElements.find(col => col.querySelector('picture, img'));
-    if (!rightContent && columnElements.length > 1) {
-      rightContent = columnElements.find(col => col !== leftContent);
+  // Left cell: Get the main .blte-text element only (text content only)
+  let leftCell = null;
+  for (const col of gridChildren) {
+    const text = col.querySelector(':scope > .blte-text');
+    if (text) {
+      leftCell = text;
+      break;
     }
   }
+  if (!leftCell) leftCell = document.createElement('div');
 
-  // For leftContent: get the actual content wrapper if present
-  let leftBlock = leftContent.querySelector('.blte-text, .blte-text-and-media__content, .blte-text-and-media__content__description');
-  if (!leftBlock) leftBlock = leftContent;
-
-  // For rightContent: get the image/picture only
-  let rightBlock = '';
-  if (rightContent) {
-    rightBlock = rightContent.querySelector('picture, img');
-    if (!rightBlock) {
-      // Sometimes the image is directly in the wrapper
-      rightBlock = rightContent;
+  // Right cell: Only the media/image and any icon/caption that are direct siblings of the attachment
+  let rightCell = null;
+  for (const col of gridChildren) {
+    const attachment = col.querySelector('.blte-text-and-media__media__attachment');
+    if (attachment) {
+      const wrapper = document.createElement('div');
+      wrapper.appendChild(attachment);
+      // Also add any icon/caption that is a direct sibling after the attachment
+      let sib = attachment.nextElementSibling;
+      while (sib && sib.classList.contains('blte-text-and-media__media__imageContent')) {
+        wrapper.appendChild(sib);
+        sib = sib.nextElementSibling;
+      }
+      rightCell = wrapper;
+      break;
     }
   }
+  if (!rightCell) rightCell = document.createElement('div');
 
-  // Build table: header row, then one row with two columns (text, image)
-  const cells = [
-    ['Columns (columns19)'],
-    [leftBlock, rightBlock]
-  ];
+  const headerRow = ['Columns (columns19)'];
+  const contentRow = [leftCell, rightCell];
+  const cells = [headerRow, contentRow];
   const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

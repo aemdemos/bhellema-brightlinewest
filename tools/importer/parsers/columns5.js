@@ -1,22 +1,38 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Get all immediate <li> children representing columns
+  // Get all direct li children (each is a column)
   const columns = Array.from(element.querySelectorAll(':scope > li'));
-  // For each column, gather all content (preserving structure)
-  const contentCells = columns.map((li) => {
-    // Gather all node children, skipping empty text nodes
-    const nodes = Array.from(li.childNodes).filter(node => {
-      return !(node.nodeType === Node.TEXT_NODE && !node.textContent.trim());
-    });
-    if (nodes.length === 1) return nodes[0];
-    if (nodes.length > 1) return nodes;
-    return '';
+
+  // For each column, gather all content as a fragment
+  const contentRow = columns.map(li => {
+    const fragment = document.createDocumentFragment();
+    // Use the first <div> inside <li> for all block content
+    const topDiv = li.querySelector(':scope > div');
+    if (topDiv) {
+      // Append all children, preserving structure
+      Array.from(topDiv.children).forEach(child => {
+        fragment.appendChild(child);
+      });
+    } else {
+      Array.from(li.childNodes).forEach(child => {
+        fragment.appendChild(child);
+      });
+    }
+    // Fallback for empty columns
+    if (!fragment.hasChildNodes()) {
+      fragment.appendChild(document.createTextNode(''));
+    }
+    return fragment;
   });
-  // Compose table: header row is a single cell, then content row is n columns
-  const tableRows = [
+
+  // Compose the rows as per the markdown example:
+  // 1. Header row: one cell only! (not an array with as many columns as columns)
+  // 2. Content row: N cells (one for each li/column)
+  const rows = [
     ['Columns (columns5)'],
-    contentCells
+    contentRow
   ];
-  const table = WebImporter.DOMUtils.createTable(tableRows, document);
+
+  const table = WebImporter.DOMUtils.createTable(rows, document);
   element.replaceWith(table);
 }

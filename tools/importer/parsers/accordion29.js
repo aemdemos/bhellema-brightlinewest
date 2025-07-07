@@ -1,44 +1,45 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Block header as per spec
-  const headerRow = ['Accordion (accordion29)'];
-  const rows = [headerRow];
-
   // Find the main accordion container
   let accordionRoot = element.querySelector('.blte-accordion');
-  if (!accordionRoot) accordionRoot = element;
+  if (!accordionRoot) {
+    // fallback: treat element as root
+    accordionRoot = element;
+  }
 
-  // The accordion items are generally found under direct children of accordionRoot
-  const accordionItemNodes = Array.from(accordionRoot.querySelectorAll(':scope > div'))
-    .map(div => div.querySelector('.blte-accordion-item') || (div.classList && div.classList.contains('blte-accordion-item') ? div : null))
-    .filter(Boolean);
+  // Find all accordion items (each one is a row)
+  const itemNodes = accordionRoot.querySelectorAll('.blte-accordion-item');
 
-  // For each accordion item, pull the title and content
-  accordionItemNodes.forEach(item => {
-    // Title extraction: find .blte-title inside the .blte-accordion-item__title button
-    const titleButton = item.querySelector('.blte-accordion-item__title');
+  // Build the table rows, starting with the header
+  const rows = [
+    ['Accordion (accordion29)'],
+  ];
+
+  itemNodes.forEach((item) => {
+    // Title cell: Find the .blte-accordion-item__title button
+    let titleButton = item.querySelector('.blte-accordion-item__title');
     let titleContent = null;
     if (titleButton) {
-      const blteTitle = titleButton.querySelector('.blte-title');
-      if (blteTitle) {
-        titleContent = blteTitle;
+      // Prefer to extract the h3.blte-title within the button if present
+      const h3 = titleButton.querySelector('h3.blte-title');
+      if (h3) {
+        titleContent = h3;
       } else {
-        // fallback: use the button's text if .blte-title missing
-        titleContent = document.createElement('span');
-        titleContent.textContent = titleButton.textContent.trim();
+        // fallback: use button contents (without trailing icon)
+        // Clone the button, remove icon, use children except trailing icon
+        let btnClone = titleButton.cloneNode(true);
+        let icon = btnClone.querySelector('.blte-accordion-item__trailing-icon');
+        if (icon) icon.remove();
+        titleContent = btnClone.childNodes.length === 1 ? btnClone.childNodes[0] : btnClone;
       }
     } else {
-      // fallback: look for a heading inside the item
-      const fallbackHeading = item.querySelector('h3, h2, h4, h5, h6');
-      if (fallbackHeading) {
-        titleContent = fallbackHeading;
-      }
+      // fallback: use item's text
+      titleContent = document.createTextNode(item.textContent.trim());
     }
-    // Content extraction: .blte-accordion-item__content (contains all HTML, not just text)
-    const content = item.querySelector('.blte-accordion-item__content');
-    if (titleContent && content) {
-      rows.push([titleContent, content]);
-    }
+    // Content cell: the content region for this accordion item
+    let contentRegion = item.querySelector('.blte-accordion-item__content');
+    let contentContent = contentRegion ? contentRegion : document.createTextNode('');
+    rows.push([titleContent, contentContent]);
   });
 
   const table = WebImporter.DOMUtils.createTable(rows, document);

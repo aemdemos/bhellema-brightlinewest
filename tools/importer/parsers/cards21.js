@@ -1,74 +1,37 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Table header as specified
-  const headerRow = ['Cards (cards21)'];
-  const rows = [headerRow];
-
-  // Find the main content area
-  const listContent = element.querySelector('.blte-teasers-list__content');
-  if (!listContent) return;
-
-  // Find all card lists
-  const cardUlLists = listContent.querySelectorAll('.blte-teasers-list__items');
-  cardUlLists.forEach((ul) => {
-    ul.querySelectorAll(':scope > li').forEach((li) => {
-      // --- Image cell ---
-      let imgCell = '';
-      const imgWrapper = li.querySelector('.blte-teaser-v2__image picture');
-      if (imgWrapper) {
-        const img = imgWrapper.querySelector('img');
-        if (img) {
-          imgCell = img;
-        } else {
-          imgCell = imgWrapper;
-        }
+  // Cards21 block: 2 columns, first row is block name, each subsequent row is a card (image/icon, text content)
+  // The example: header is exactly 'Cards (cards21)'
+  const rows = [['Cards (cards21)']];
+  const contentRoot = element.querySelector('.blte-teasers-list__content');
+  if (!contentRoot) return;
+  // All ULs with cards
+  const itemsWrappers = contentRoot.querySelectorAll('.blte-teasers-list__items');
+  itemsWrappers.forEach((ul) => {
+    ul.querySelectorAll('li').forEach((li) => {
+      // First cell: image/icon (mandatory). Should be the <img> inside .blte-teaser-v2__image
+      let imageCell = '';
+      const imgWrap = li.querySelector('.blte-teaser-v2__image');
+      if (imgWrap) {
+        const img = imgWrap.querySelector('img');
+        if (img) imageCell = img;
       }
-      // --- Text cell: Gather heading, description, CTA if present ---
-      let textParts = [];
-      // Title (look for heading tags inside text area)
-      const textArea = li.querySelector('.blte-teaser-v2__text-wrapper') || li;
-      // Headings (h1-h6)
-      const heading = textArea.querySelector('h1, h2, h3, h4, h5, h6');
-      if (heading) {
-        textParts.push(heading);
+      // Second cell: text content (may be only link in this variant)
+      // Use the link inside .blte-teaser-v2__description > .blte-text > a, if exists
+      let textContent = [];
+      const desc = li.querySelector('.blte-teaser-v2__description');
+      if (desc) {
+        // We want the link (Download Image) as in original card
+        const link = desc.querySelector('a');
+        if (link) textContent.push(link);
       }
-      // Description (look for a paragraph or non-heading text in text area, or .blte-text that is not a link)
-      let descriptionAdded = false;
-      // Try to find paragraphs
-      const paragraphs = textArea.querySelectorAll('p');
-      paragraphs.forEach((p) => {
-        if (p.textContent.trim()) {
-          textParts.push(p);
-          descriptionAdded = true;
-        }
-      });
-      // Otherwise, if no <p>, try to find .blte-text nodes with text
-      if (!descriptionAdded) {
-        const descNodes = textArea.querySelectorAll('.blte-text');
-        descNodes.forEach((d) => {
-          // Avoid the CTA link
-          if (!d.querySelector('a') && d.textContent.trim()) {
-            textParts.push(d);
-          }
-        });
-      }
-      // Call to Action (link)
-      const ctaWrapper = li.querySelector('.blte-teaser-v2__description .blte-text a, .blte-teaser-v2__content a');
-      if (ctaWrapper) {
-        textParts.push(ctaWrapper);
-      }
-      // If nothing found, fallback to any text nodes in text area
-      if (textParts.length === 0 && textArea && textArea.textContent.trim()) {
-        const div = document.createElement('div');
-        div.textContent = textArea.textContent.trim();
-        textParts.push(div);
-      }
-      // If still nothing, fallback to empty string
-      let textCell = textParts.length ? textParts : '';
-      rows.push([imgCell, textCell]);
+      // Defensive: if no image or link, use blank string for cell
+      rows.push([
+        imageCell || '',
+        textContent.length > 0 ? textContent : ''
+      ]);
     });
   });
-
   const table = WebImporter.DOMUtils.createTable(rows, document);
   element.replaceWith(table);
 }

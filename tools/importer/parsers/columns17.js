@@ -1,30 +1,21 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Header as a SINGLE column (matching the markdown example)
+  // The header row must be a single cell/column
   const headerRow = ['Columns (columns17)'];
 
-  // Get all direct li children (columns for the second row)
-  const lis = Array.from(element.querySelectorAll(':scope > li'));
-
-  // For each li, gather its content as a column (keep original elements, do not clone)
-  const columns = lis.map((li) => {
-    const fragment = document.createDocumentFragment();
-    // Title
-    const title = li.querySelector('.blte-feature-item__title');
-    if (title) fragment.appendChild(title);
-    // Description
-    const desc = li.querySelector('.blte-feature-item__description');
-    if (desc) fragment.appendChild(desc);
-    return fragment;
+  // The second row must have as many columns as there are features
+  const items = Array.from(element.querySelectorAll(':scope > li'));
+  const columnsRow = items.map(li => {
+    // Prefer the specific content block if present
+    const content = li.querySelector('.blte-feature-item__content');
+    return content || li;
   });
 
-  // Compose cells: header as 1 column, then content row with N columns
-  const cells = [
-    headerRow,
-    columns
-  ];
+  // Only proceed if there are columns
+  if (columnsRow.length === 0) return;
 
-  // Replace the element with the composed table
-  const block = WebImporter.DOMUtils.createTable(cells, document);
-  element.replaceWith(block);
+  // Build block table: first row is single header, second is N columns
+  const rows = [headerRow, columnsRow];
+  const table = WebImporter.DOMUtils.createTable(rows, document);
+  element.replaceWith(table);
 }

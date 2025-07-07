@@ -1,46 +1,45 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Build header row exactly as required
-  const headerRow = ['Hero (hero33)'];
+  // Find the main hero block
+  const heroBlock = element.querySelector('.blte-text-and-media');
 
-  // Extract the image (background image for the hero)
-  let image = null;
-  const mediaAttachment = element.querySelector('.blte-text-and-media__media__attachment');
-  if (mediaAttachment) {
-    image = mediaAttachment.querySelector('img');
+  // Row 2: Image
+  let imageElem = null;
+  if (heroBlock) {
+    const pic = heroBlock.querySelector('picture');
+    if (pic) imageElem = pic;
   }
 
-  // Prepare the content cell
-  const content = element.querySelector('.blte-text-and-media__content');
-  let contentElements = [];
-  if (content) {
-    // Eyebrow (optional)
-    const eyebrow = content.querySelector('.blte-text-and-media__content__eyebrow');
-    if (eyebrow) contentElements.push(eyebrow);
-    // Title (h2)
-    // The h2 may be wrapped in .blte-font--variant-h2 or just have .blte-title
-    let title = content.querySelector('.blte-font--variant-h2 h2, .blte-title');
-    if (title) contentElements.push(title);
-    // Date or subheading (optional, contained in first <p> of description)
-    const description = content.querySelector('.blte-text-and-media__content__description .blte-text');
-    if (description) {
-      // All paragraphs from the description
-      const ps = Array.from(description.querySelectorAll('p'));
-      contentElements.push(...ps);
+  // Row 3: Content (headline, eyebrow, paragraphs, CTA)
+  let contentParts = [];
+  if (heroBlock) {
+    const content = heroBlock.querySelector('.blte-text-and-media__content');
+    if (content) {
+      // Eyebrow or subheading
+      const eyebrow = content.querySelector('.blte-text-and-media__content__eyebrow');
+      if (eyebrow) contentParts.push(eyebrow);
+      // Title (should be h2)
+      const title = content.querySelector('h2, .blte-title');
+      if (title) contentParts.push(title);
+      // Description (may contain date and paragraph)
+      const description = content.querySelector('.blte-text-and-media__content__description');
+      if (description) contentParts.push(description);
+      // CTA
+      const cta = content.querySelector('.blte-text-and-media__content__buttons');
+      if (cta) contentParts.push(cta);
     }
-    // CTA button (optional)
-    const cta = content.querySelector('.blte-text-and-media__content__buttons a, .blte-btn');
-    if (cta) contentElements.push(cta);
   }
 
-  // Arrange table rows as per the block spec: header, image, then content
-  const rows = [
-    headerRow,
-    [image ? image : ''],
-    [contentElements]
+  // If no content found, add placeholder so table remains valid
+  if (contentParts.length === 0) contentParts = [''];
+
+  // Assemble table as: header, image row, content row
+  const cells = [
+    ['Hero (hero33)'],
+    [imageElem],
+    [contentParts]
   ];
 
-  // Replace original element with the structured block table
-  const block = WebImporter.DOMUtils.createTable(rows, document);
-  element.replaceWith(block);
+  const table = WebImporter.DOMUtils.createTable(cells, document);
+  element.replaceWith(table);
 }

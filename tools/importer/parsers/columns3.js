@@ -1,23 +1,25 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find the carousel items list
-  const itemsList = element.querySelector('ul.blte-features-grid__items');
-  if (!itemsList) return;
-  // Find all feature items (columns)
-  const items = Array.from(itemsList.querySelectorAll(':scope > li.blte-feature-item'));
-  if (items.length === 0) return;
+  // Find the <ul> that contains the columns
+  const ul = element.querySelector('.blte-features-grid__items');
+  if (!ul) return;
 
-  // Build the header row so it is exactly one cell (spanning all columns)
-  // This is achieved by making the header row an array with a single element
-  const headerRow = ['Columns (columns3)'];
-  // Build the content row: one cell per feature item (column)
-  const contentRow = items.map((item) => {
-    // Reference the feature content div directly
-    const content = item.querySelector('.blte-feature-item__content');
-    return content || '';
+  // Get all <li> elements for the columns
+  const lis = Array.from(ul.querySelectorAll(':scope > li.blte-feature-item'));
+  if (!lis.length) return;
+
+  // For each column, get its main content element
+  const columnCells = lis.map(li => {
+    const content = li.querySelector('.blte-feature-item__content');
+    return content || li;
   });
 
-  const rows = [headerRow, contentRow];
+  // Construct the correct table structure: header is single cell, second row contains all columns
+  const rows = [
+    ['Columns (columns3)'], // header: always ONE cell
+    columnCells             // second row: one cell per column
+  ];
+  
   const table = WebImporter.DOMUtils.createTable(rows, document);
   element.replaceWith(table);
 }

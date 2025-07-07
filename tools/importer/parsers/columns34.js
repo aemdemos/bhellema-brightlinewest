@@ -1,50 +1,28 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Header row matches EXACTLY
-  const headerRow = ['Columns (columns34)'];
-
-  // Find the deepest .aem-Grid that contains the .blte-teaser__wrapper children
-  let teaserGrid = null;
-  const grids = element.querySelectorAll('.aem-Grid');
-  for (const grid of grids) {
-    const wrappers = grid.querySelectorAll(':scope > .blte-teaser__wrapper');
-    if (wrappers.length === 3) {
-      teaserGrid = grid;
-      break;
-    }
+  // Find the innermost grid that contains .blte-teaser__wrapper as direct children
+  let grid = element.querySelector('.aem-Grid--12 .aem-Grid--12 .aem-Grid--12');
+  if (!grid) {
+    grid = element.querySelector('.aem-Grid');
   }
-  // Fallback: find a grid with >1 wrappers
-  if (!teaserGrid) {
-    for (const grid of grids) {
-      const wrappers = grid.querySelectorAll(':scope > .blte-teaser__wrapper');
-      if (wrappers.length > 1) {
-        teaserGrid = grid;
-        break;
-      }
-    }
-  }
-  
-  let rowCells = [];
-  if (teaserGrid) {
-    // Take all immediate children that are .blte-teaser__wrapper
-    rowCells = Array.from(teaserGrid.querySelectorAll(':scope > .blte-teaser__wrapper'));
-  }
-  // Fallback: If not found, get all .blte-teaser__wrapper anywhere
-  if (rowCells.length < 2) {
-    rowCells = Array.from(element.querySelectorAll('.blte-teaser__wrapper'));
-  }
-  // Fallback: If not found, try .blte-teaser
-  if (rowCells.length < 2) {
-    rowCells = Array.from(element.querySelectorAll('.blte-teaser'));
-  }
-  // Fallback: if nothing, use whole element as one cell
-  if (!rowCells.length) {
-    rowCells = [element];
-  }
-  
-  // Table must have a single header row, then a single content row with 3 columns
-  const tableRows = [headerRow, rowCells];
-
-  const table = WebImporter.DOMUtils.createTable(tableRows, document);
+  const teaserWrappers = grid ? Array.from(grid.querySelectorAll(':scope > .blte-teaser__wrapper')) : [];
+  if (!teaserWrappers.length) return;
+  // Each column's content: icon/image and title (as single elements per column)
+  const columns = teaserWrappers.map(wrapper => {
+    const teaser = wrapper.querySelector('.blte-teaser');
+    if (!teaser) return wrapper;
+    const contentFragment = document.createElement('div');
+    const imgDiv = teaser.querySelector('.blte-teaser__image');
+    const titleDiv = teaser.querySelector('.blte-teaser__title');
+    if (imgDiv) contentFragment.appendChild(imgDiv);
+    if (titleDiv) contentFragment.appendChild(titleDiv);
+    return contentFragment;
+  });
+  // Structure: header row should be a single cell; second row should have as many columns as needed
+  const cells = [
+    ['Columns (columns34)'],
+    columns
+  ];
+  const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

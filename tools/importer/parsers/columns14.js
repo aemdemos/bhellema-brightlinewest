@@ -1,60 +1,61 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Table header must be a single-cell array
-  const headerRow = ['Columns (columns14)'];
+  // Get the main column wrappers
+  const wrappers = element.querySelectorAll(':scope > .blte-sectioncontainer > .aem-Grid > .blte-sectioncontainer__wrapper');
 
-  // Extract main grid
-  const mainGrid = element.querySelector(':scope > .blte-sectioncontainer > .aem-Grid');
-
-  let col1 = null, col2 = null, col3 = null;
-  if (mainGrid) {
-    const gridChildren = mainGrid.querySelectorAll(':scope > .blte-sectioncontainer__wrapper');
-    if (gridChildren.length >= 3) {
-      // Column 1
-      const col1Grid = gridChildren[0].querySelector('.blte-sectioncontainer > .aem-Grid');
-      if (col1Grid) {
-        const wrappers = col1Grid.querySelectorAll(':scope > .blte-text__wrapper');
-        col1 = document.createElement('div');
-        wrappers.forEach(w => {
-          const txt = w.querySelector('.blte-text');
-          if (txt) col1.appendChild(txt);
-        });
-      }
-      // Column 2
-      const col2Grid = gridChildren[1].querySelector('.blte-sectioncontainer > .aem-Grid');
-      if (col2Grid) {
-        const txtWrap = col2Grid.querySelector('.blte-text__wrapper');
-        if (txtWrap) {
-          const txt = txtWrap.querySelector('.blte-text');
-          if (txt) {
-            col2 = document.createElement('div');
-            col2.appendChild(txt);
-          }
-        }
-      }
-      // Column 3
-      const col3Grid = gridChildren[2].querySelector('.blte-sectioncontainer > .aem-Grid');
-      if (col3Grid) {
-        const txtWrap = col3Grid.querySelector('.blte-text__wrapper');
-        if (txtWrap) {
-          const txt = txtWrap.querySelector('.blte-text');
-          if (txt) {
-            col3 = document.createElement('div');
-            col3.appendChild(txt);
-          }
-        }
-      }
-    }
+  // LEFT COLUMN
+  const leftColContent = [];
+  if (wrappers[0]) {
+    const textWrappers = wrappers[0].querySelectorAll(':scope > .blte-sectioncontainer > .aem-Grid > .blte-text__wrapper');
+    textWrappers.forEach(el => leftColContent.push(el));
   }
-  if (!col1) col1 = document.createElement('div');
-  if (!col2) col2 = document.createElement('div');
-  if (!col3) col3 = document.createElement('div');
 
-  // Fix: The header row must be a single-cell array, the second row is the columns array
-  const cells = [
-    headerRow,
-    [col1, col2, col3],
-  ];
-  const table = WebImporter.DOMUtils.createTable(cells, document);
+  // RIGHT COLUMN
+  const rightColContentArr = [];
+  [wrappers[1], wrappers[2]].forEach(w => {
+    if (w) {
+      const textWrapper = w.querySelector(':scope > .blte-sectioncontainer > .aem-Grid > .blte-text__wrapper');
+      if (textWrapper) rightColContentArr.push(textWrapper);
+    }
+  });
+  let rightColContent = '';
+  if (rightColContentArr.length > 0) {
+    const flexDiv = document.createElement('div');
+    flexDiv.style.display = 'flex';
+    flexDiv.style.gap = '2rem';
+    flexDiv.style.justifyContent = 'flex-start';
+    rightColContentArr.forEach(child => {
+      const childDiv = document.createElement('div');
+      childDiv.appendChild(child);
+      flexDiv.appendChild(childDiv);
+    });
+    rightColContent = flexDiv;
+  }
+
+  // --- FIX: Ensure the header row has two columns to match the content row ---
+  const headerRow = ['Columns (columns14)', ''];
+  const contentRow = [leftColContent, rightColContent];
+  const rows = [headerRow, contentRow];
+
+  // Custom table creation to guarantee two <th>s in the header row
+  const table = document.createElement('table');
+
+  rows.forEach((row, rowIndex) => {
+    const tr = document.createElement('tr');
+    row.forEach((cell, colIndex) => {
+      const cellTag = rowIndex === 0 ? 'th' : 'td';
+      const cellEl = document.createElement(cellTag);
+      if (Array.isArray(cell)) {
+        cell.forEach(item => cellEl.append(item));
+      } else if (typeof cell === 'string') {
+        cellEl.innerHTML = cell;
+      } else if (cell) {
+        cellEl.append(cell);
+      }
+      tr.appendChild(cellEl);
+    });
+    table.appendChild(tr);
+  });
+
   element.replaceWith(table);
 }
