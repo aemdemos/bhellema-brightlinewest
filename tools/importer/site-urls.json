@@ -1,0 +1,897 @@
+{
+  "originUrl": "https://www.brightlinewest.com",
+  "lastCrawled": "https://www.brightlinewest.com",
+  "urls": [
+    {
+      "url": "https://www.brightlinewest.com/",
+      "source": "SITEMAPS",
+      "targetPath": "/",
+      "id": "0a9359ad756f6572f6bc9fadad07d112086762c4"
+    },
+    {
+      "url": "https://www.brightlinewest.com/404",
+      "source": "SITEMAPS",
+      "targetPath": "/404",
+      "id": "b2de907843ca02ee8f0fb9893fe97f22039fc806"
+    },
+    {
+      "url": "https://www.brightlinewest.com/about-us",
+      "source": "SITEMAPS",
+      "targetPath": "/about-us",
+      "id": "7af9f07d55321071f7a38c14e794d2e3e601cd75"
+    },
+    {
+      "url": "https://www.brightlinewest.com/about-us/executive-team",
+      "source": "SITEMAPS",
+      "targetPath": "/about-us/executive-team",
+      "id": "837c914a15131c3a4122e0a85ac087feacd4dfde"
+    },
+    {
+      "url": "https://www.brightlinewest.com/about-us/faq",
+      "source": "SITEMAPS",
+      "targetPath": "/about-us/faq",
+      "id": "250bc556303b7e7232ddbcaf69cf73160e34f964"
+    },
+    {
+      "url": "https://www.brightlinewest.com/about-us/our-story",
+      "source": "SITEMAPS",
+      "targetPath": "/about-us/our-story",
+      "id": "297373d7ce274b8d91155a6625cf841d6e6d9d0b"
+    },
+    {
+      "url": "https://www.brightlinewest.com/accessibility",
+      "source": "SITEMAPS",
+      "targetPath": "/accessibility",
+      "id": "5fc34bf2733f6bc4d4bb289f08127bcd411369d8"
+    },
+    {
+      "url": "https://www.brightlinewest.com/benefits/connectivity",
+      "source": "SITEMAPS",
+      "targetPath": "/benefits/connectivity",
+      "id": "2a9396161d74995e8d0678d26d2b392d91fff972"
+    },
+    {
+      "url": "https://www.brightlinewest.com/benefits/environmental-impact",
+      "source": "SITEMAPS",
+      "targetPath": "/benefits/environmental-impact",
+      "id": "9b094572ecfa9ee035a398c5f94d89883710715c"
+    },
+    {
+      "url": "https://www.brightlinewest.com/benefits/jobs",
+      "source": "SITEMAPS",
+      "targetPath": "/benefits/jobs",
+      "id": "e3b7397ebc2f92597e107f7b470620c90403ddf2"
+    },
+    {
+      "url": "https://www.brightlinewest.com/benefits/safety",
+      "source": "SITEMAPS",
+      "targetPath": "/benefits/safety",
+      "id": "93cac95a8db832f8bace448f3d3cce947f4d7a4e"
+    },
+    {
+      "url": "https://www.brightlinewest.com/careers",
+      "source": "SITEMAPS",
+      "targetPath": "/careers",
+      "id": "4426c34c6031008c92e684c977a6e6472ee43fb4"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra",
+      "source": "SITEMAPS",
+      "targetPath": "/fra",
+      "id": "760a39df0efb6217c4609cbf00a6aa917a8eb2db"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca",
+      "id": "f34c64aba5a3d4efc4b2afc7ba789681d0f5e1d2"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-clad-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-clad-non-conf-rev-final",
+      "id": "8f60868165b4bafdce551ec9ace7769c6fed70b0"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-icf-bv-001-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-icf-bv-001-non-conf-rev-final",
+      "id": "26638f4f5716a17580844dade114fdbfeb1ee1dd"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-icf-xw1-004-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-icf-xw1-004-non-conf-rev-final",
+      "id": "8525ded78aa28d20371a37b32cf4590c1d1baa4d"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-icf-xw1-010-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-icf-xw1-010-non-conf-rev-final",
+      "id": "7beac9abd9973d2e99d81dc5f4e0209f5b8e8d36"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-icf-xw2-007-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-icf-xw2-007-non-conf-rev-final",
+      "id": "f1471692021db38298ac9677878b51b39a94ceb5"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-icf-xw2-017-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-icf-xw2-017-non-conf-rev-final",
+      "id": "fed8bda222315c7617933b0b576627041a9fdff8"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-mrll-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-mrll-non-conf-rev-final",
+      "id": "f1b55677bf365d871d6e9a1f4d75eeb0d61be3ad"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-000223-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-000223-non-conf-rev-final",
+      "id": "a605efcbeee9993f6a24cefe45e4d1de2b8311d5"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-000541-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-000541-non-conf-rev-final",
+      "id": "5717f03f25c1a5a21b7404297a18f4dbd75f0705"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-000562-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-000562-non-conf-rev-final",
+      "id": "814352ca95cf36f589a753c6f5a937a9bf9210c9"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-000885-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-000885-non-conf-rev-final",
+      "id": "aa7ac95df8f5de080934faea61df019324c554a6"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-002129-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-002129-non-conf-rev-final",
+      "id": "98c209abedbfe93194e44a14419a3ad92c6d3a96"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-002283-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-002283-non-conf-rev-final",
+      "id": "f63e784cc7d328c13a3d07871b8223681d0651ac"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-003485-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-003485-non-conf-rev-final",
+      "id": "2f4415889ebbd98bc3a73aa02aaee5101f3f9739"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-003694-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-003694-non-conf-rev-final",
+      "id": "faa07deceb760845ed17542d5b555ba44cf41109"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-006023-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-006023-non-conf-rev-final",
+      "id": "45f837ca5b0db100468db8216fdc7e00e9869035"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-006950-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-006950-non-conf-rev-final",
+      "id": "05de69bcef2e1f969c4e86898a0ed9e733abd6e1"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-008321-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-008321-non-conf-rev-final",
+      "id": "0a72d313d88b19bffa67c16c498707a361262484"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-008923-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-p-36-008923-non-conf-rev-final",
+      "id": "8c88817d9675af8927e8a7c750b878ac04016502"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-sqad-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-sqad-non-conf-rev-final",
+      "id": "57d25781d4f260b7e948f0eeaa9f54e0e80402b8"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-srad-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-srad-non-conf-rev-final",
+      "id": "824007058ae933e73e672422c85500dfde3b256a"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-xpw21-sw-015-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-ca/bw-lv-vv-stage-1-completion-memo-xpw21-sw-015-non-conf-rev-final",
+      "id": "3eae720a7852bcd8b497751344658892e337aa5b"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-nv",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-nv",
+      "id": "317a336278daec5b89a6d5480881f2bd8e830127"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-nv/bw-lv-vv-stage-1-completion-memo-26ck11252-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-nv/bw-lv-vv-stage-1-completion-memo-26ck11252-non-conf-rev-final",
+      "id": "dd3590b817a693b51dc3cece9e6b6a5338f709a8"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-nv/bw-lv-vv-stage-1-completion-memo-26ck5760-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-nv/bw-lv-vv-stage-1-completion-memo-26ck5760-non-conf-rev-final",
+      "id": "432296df7770cff10abd3c8ffee37fa6a3168d82"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-one-completion-memos-for-nv/bw-lv-vv-stage-1-completion-memo-26ck7189-non-conf-rev-final",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-one-completion-memos-for-nv/bw-lv-vv-stage-1-completion-memo-26ck7189-non-conf-rev-final",
+      "id": "1e74bf778f09d94a68fcc19e741e9a6a9d70c7c5"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-two-completion-memos-for-ca-and-nv",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-two-completion-memos-for-ca-and-nv",
+      "id": "96af72be9a99608dd25f57fa8784d3631c88bd6b"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-two-completion-memos-for-ca-and-nv/bw-lv-vv-stage-1-completion-memorandum-final-redacted",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-two-completion-memos-for-ca-and-nv/bw-lv-vv-stage-1-completion-memorandum-final-redacted",
+      "id": "420cda180ea8af8acf1cb96f1ba64e5185146991"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-two-completion-memos-for-ca-and-nv/bw-lv-vv-stage-2-completion-memo-26ck11252-final-redacted",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-two-completion-memos-for-ca-and-nv/bw-lv-vv-stage-2-completion-memo-26ck11252-final-redacted",
+      "id": "2e8b17af5cf58580d7f9336d28fb7ecea45558aa"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-two-completion-memos-for-ca-and-nv/bw-lv-vv-stage-2-completion-memo-26ck7189-final-redacted",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-two-completion-memos-for-ca-and-nv/bw-lv-vv-stage-2-completion-memo-26ck7189-final-redacted",
+      "id": "190d8c3d083f81c5a8c4dda630fe89677d3bc013"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-two-completion-memos-for-ca-and-nv/bw-lv-vv-stage-2-completion-memo-p-36-000223-final-redacted",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-two-completion-memos-for-ca-and-nv/bw-lv-vv-stage-2-completion-memo-p-36-000223-final-redacted",
+      "id": "fe4d4b46e96fd9e8928463a43cfa0618b66ca4e9"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-two-completion-memos-for-ca-and-nv/bw-lv-vv-stage-2-completion-memo-p-36-002129-final-redacted",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-two-completion-memos-for-ca-and-nv/bw-lv-vv-stage-2-completion-memo-p-36-002129-final-redacted",
+      "id": "3e27023113c15c1f1ffad70b725cbaae61139f18"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-two-completion-memos-for-ca-and-nv/bw-lv-vv-stage-2-completion-memo-p-36-004198-final-redacted",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-two-completion-memos-for-ca-and-nv/bw-lv-vv-stage-2-completion-memo-p-36-004198-final-redacted",
+      "id": "059183037cd79ac7bb24f2d09a8461dd7d0ddf81"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-two-completion-memos-for-ca-and-nv/bw-lv-vv-stage-2-completion-memo-p-36-006023-final-redacted",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-two-completion-memos-for-ca-and-nv/bw-lv-vv-stage-2-completion-memo-p-36-006023-final-redacted",
+      "id": "a530b36a1f817fd80fb685ef1c8a31db8666bd83"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-two-completion-memos-for-ca-and-nv/bw-lv-vv-stage-2-completion-memo-p-36-008923-final-redacted",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-two-completion-memos-for-ca-and-nv/bw-lv-vv-stage-2-completion-memo-p-36-008923-final-redacted",
+      "id": "386fc25b75f77c7c740ef4c25c17810c09818a5a"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-two-completion-memos-for-ca-and-nv/cover-letters",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-two-completion-memos-for-ca-and-nv/cover-letters",
+      "id": "99443194b088cefd58bd10734231c3a24026f16d"
+    },
+    {
+      "url": "https://www.brightlinewest.com/fra/stage-two-completion-memos-for-ca-and-nv/cover-letters/2024-05-29-fra-bw-vegas-pa-final-eof-memos-all",
+      "source": "SITEMAPS",
+      "targetPath": "/fra/stage-two-completion-memos-for-ca-and-nv/cover-letters/2024-05-29-fra-bw-vegas-pa-final-eof-memos-all",
+      "id": "89367b0e69cf983e5b69afd6ab602731a67b1d6c"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media",
+      "source": "SITEMAPS",
+      "targetPath": "/media",
+      "id": "b7db036cfffd233379cf93129263f496f61a3b04"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/advisories",
+      "source": "SITEMAPS",
+      "targetPath": "/media/advisories",
+      "id": "ea5d08da06e3ecdf141e3ded9a2ff43ab0e592d7"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/media-kit-download",
+      "source": "SITEMAPS",
+      "targetPath": "/media/media-kit-download",
+      "id": "33803d27918c20f8e7674a7d828ecc8cf73f9b9a"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases",
+      "id": "1f9174dbebcbae00fe79137bca1a6b8830583353"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2021",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2021",
+      "id": "3422cb91743b5ab983b559660cdd07d9ab5349fb"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2021/brightline-acquires-site-in-las-vegas-for-high-speed-rail-statio",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2021/brightline-acquires-site-in-las-vegas-for-high-speed-rail-statio",
+      "id": "98f7a812455ff9f062e10a21d283ca7723595e47"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2023/brightline-west-inks-committment-with-high-speed-rail-labor-coalition",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2023/brightline-west-inks-committment-with-high-speed-rail-labor-coalition",
+      "id": "82f86b2c5aab1bb42f6df2d62cc21fbc64842430"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2023/brightline-west-joined-by-california-and-southern-nevada-building-trades",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2023/brightline-west-joined-by-california-and-southern-nevada-building-trades",
+      "id": "089d0b0ff72b83e9db04fb7908c14d736cdc44ab"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2023/caltrans-california-department-fish-wildlife-brightline-to-build-wildlife-overcrossings",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2023/caltrans-california-department-fish-wildlife-brightline-to-build-wildlife-overcrossings",
+      "id": "462f5a95a236efe635124c60d3cdb14ecdeb9d9f"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2023/inland-empire-regional-chamber-of-commerce-event-to-spotlight-brightline-west",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2023/inland-empire-regional-chamber-of-commerce-event-to-spotlight-brightline-west",
+      "id": "8c70905a4c21b981d2c6bdcf146675172d7f394d"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2023/president-biden-joins-officials-in-las-vegas-to-announce-grant-for-brightline-west",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2023/president-biden-joins-officials-in-las-vegas-to-announce-grant-for-brightline-west",
+      "id": "a6e9469d5fd5b72074e17369de6e7f7689b367e8"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2023/sbcta-awarded-25-million-raise-grant-funds-to-be-used-for-brightline-west-stations",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2023/sbcta-awarded-25-million-raise-grant-funds-to-be-used-for-brightline-west-stations",
+      "id": "7fe3da92429cb40434e918849022986083a27d31"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/brightline-west-announces-updates-to-field-investigation-work-february-21",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/brightline-west-announces-updates-to-field-investigation-work-february-21",
+      "id": "2350f3476ef0cf5cdbdec26edde675ac41fd44b3"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/brightline-west-announces-updates-to-field-investigation-work-in-southern-ca-and-nv-march-4",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/brightline-west-announces-updates-to-field-investigation-work-in-southern-ca-and-nv-march-4",
+      "id": "58582fe229d484c4182f830cc8ad6e63a22886ae"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/brightline-west-announces-updates-to-field-investigation-work-in-southern-california",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/brightline-west-announces-updates-to-field-investigation-work-in-southern-california",
+      "id": "ad1eaa5e4162c5cfec05388f713b1e0af08f07c8"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/brightline-west-announces-updates-to-field-investigation-work-in-southern-california-and-nevada",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/brightline-west-announces-updates-to-field-investigation-work-in-southern-california-and-nevada",
+      "id": "a0c50ccc6bcc0e09c4fd843684fc1362b633f2f8"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/brightline-west-breaks-ground-on-americas-first-high-speed-rail-project-connecting-las-vegas-to-southern-california",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/brightline-west-breaks-ground-on-americas-first-high-speed-rail-project-connecting-las-vegas-to-southern-california",
+      "id": "3b3b8e6a0183d2f347172abb90f6998b5772ed34"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/brightline-west-launches-field-work-in-nevada-in-preparation-for",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/brightline-west-launches-field-work-in-nevada-in-preparation-for",
+      "id": "ea1309b89f5bbd5f209440c8ff6fcb132eb1b21c"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/brightline-west-launches-field-work-in-southern-california-in-preparation-for-groundbreaking",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/brightline-west-launches-field-work-in-southern-california-in-preparation-for-groundbreaking",
+      "id": "b8cd71f6a760a708537b4d0bcc71820e29fc4296"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/brightline-west-selects-siemens-to-manufacture-high-speed-rail-train-sets",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/brightline-west-selects-siemens-to-manufacture-high-speed-rail-train-sets",
+      "id": "d4e87412da4650c3529e63df235ad89221523f12"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/brightline-west-updates-to-field-investigation-work-in-southern-california-and-nevada",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/brightline-west-updates-to-field-investigation-work-in-southern-california-and-nevada",
+      "id": "bc9ae2d0793f82565ec118e724f3a144c234755e"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/nevada-governor-joe-lombardo-tours-brightline-takes-train-from-orlando-to-miami",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/nevada-governor-joe-lombardo-tours-brightline-takes-train-from-orlando-to-miami",
+      "id": "a79890ae8ceb3bc0ca36ba9808d0615b79e88981"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/new-locations-to-field-investigation-work-in-southern-california-and-nevada",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/new-locations-to-field-investigation-work-in-southern-california-and-nevada",
+      "id": "6a55ba1b5901dce4d69910b02682bf3e08b9ba61"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/siemens-announces-high-speed-rail-facility-in-new-york",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/siemens-announces-high-speed-rail-facility-in-new-york",
+      "id": "7ccb7d6561d218e6fc31e842b8ff06521c025945"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/signed-sealed-and-delivered-3-billion-grant-agreement-for-brightline-west-project-officially-signed",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/signed-sealed-and-delivered-3-billion-grant-agreement-for-brightline-west-project-officially-signed",
+      "id": "20856ece25298ddcead7d40a842e68923c7e1821"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-10-14-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-10-14-24",
+      "id": "3df88df24823323ddcad6836aebc4a0a5806b6da"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-10-21-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-10-21-24",
+      "id": "bc126ac1734c84c0b373cf4c79c7986ed7df89f5"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-10-28-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-10-28-24",
+      "id": "d3a4406ef15887f95b36ffb18a6e68377c8768e3"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-10-7-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-10-7-24",
+      "id": "b211c07bdc3203dae75e647594975577e66c9db3"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-11-11-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-11-11-24",
+      "id": "c45c7e2213aabfbcf0cb42437e50c74e6cf9ad14"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-11-18-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-11-18-24",
+      "id": "f6ed85921428c4946e3cccece57568c396a10ab3"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-11-25-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-11-25-24",
+      "id": "1b020965fa29597f4b7e17b8311e2ed21a74feda"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-12-16-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-12-16-24",
+      "id": "2a8c0efbad506cae8cb3842ec3e2b30265813577"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-12-2-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-12-2-24",
+      "id": "641c41d81e5351eb639c6e8e16a9e3a111721b7f"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-12-30-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-12-30-24",
+      "id": "e4e056a711f28da1f3f4457bc2536d1afdf5058e"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-12-9-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-12-9-24",
+      "id": "6e058725ef60775c7ca6a887bfea416b79f4908f"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-4-30",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-4-30",
+      "id": "e0ced30a90cc0bbdb4bab1ad8d2edf418e517422"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-5-13-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-5-13-24",
+      "id": "29fb21af7ddea26281ba122aab84dc6ce6524c48"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-7-15-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-7-15-24",
+      "id": "6923614d097cb207dc835f5d3126a09c609f0ade"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-7-22-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-7-22-24",
+      "id": "f5a73db0c0abaebdca4a32fd164e3b777b6b107d"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-7-29-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-7-29-24",
+      "id": "f2b80147b18f6e028a3551ac63c00df81a4824dd"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-7-8-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-7-8-24",
+      "id": "60bfbb2e0ea5857ecfd604b580e5cdf37fbb1b98"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-8-14-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-8-14-24",
+      "id": "a6e5ba151fc58c7ad11bc242b57d82a3fa1ebccb"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-8-19-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-8-19-24",
+      "id": "5e45da37e0fb562993d45fff4396b7a9173a3bef"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-8-26-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-8-26-24",
+      "id": "9e64c352263e6c5b9d082964f0af8e94e702920b"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-8-5-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-8-5-24",
+      "id": "7e58f531815a24bda9eb685240f78f7069772394"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-9-16-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-9-16-24",
+      "id": "45cf02149a8bac4f8ca2fa3717ed7a0fa2bd5f34"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-9-23-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-9-23-24",
+      "id": "39be7c1a00abd4c8f0168ba5e117470eca678c11"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-9-3-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-9-3-24",
+      "id": "e9927f1bee97dea0c7d40248f22ef8c3921189be"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-9-30-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-9-30-24",
+      "id": "615ddddd889baa89ea19ec98d19e5ed2d368e686"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-9-9-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-9-9-24",
+      "id": "270d9dbc2488cdda1c2e5688877ad990588ad87f"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-and-nevada-5-20-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-and-nevada-5-20-24",
+      "id": "65852ed588e22a6302a64d37e3efaa274af93930"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-and-nevada-5-28-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-and-nevada-5-28-24",
+      "id": "1ad0184061a7e135c3a22bb1cfe15e7cab6bb0bc"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-and-nevada-5-6-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-and-nevada-5-6-24",
+      "id": "c4013716cf90036f189421b6c1d6b8c5878a14eb"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-and-nevada-6-10-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-and-nevada-6-10-24",
+      "id": "0340a912deadf22000a476d7af75dbe3d9e4c2f1"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-and-nevada-6-17-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-and-nevada-6-17-24",
+      "id": "1236e0df186d83bcc171efd656c3c053da762ff0"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-and-nevada-6-3-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-and-nevada-6-3-24",
+      "id": "c19c116555d492dbbf95fcfc2e9c79340bb47e62"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-nevada-10-14-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-nevada-10-14-24",
+      "id": "08fce3fcc07c31ea0989958c08f646248b17813b"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-nevada-10-21-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-nevada-10-21-24",
+      "id": "5945de82ac03cb36480c0b0d9a66275e1b2642a8"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-nevada-10-28-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-nevada-10-28-24",
+      "id": "3dcd2fb01929a19c512dc86dc6bd0761c5b82e36"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-nevada-10-9-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-nevada-10-9-24",
+      "id": "d32f5742009577b9c4321884b3a856957d1d5f3a"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-new-locations-for-brightline-west-field-investigation-work-in-southern-ca-and-nev-apr-15",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-new-locations-for-brightline-west-field-investigation-work-in-southern-ca-and-nev-apr-15",
+      "id": "ee267489c31a91dbed221a063dd1e81b9f02b4f6"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-new-locations-for-brightline-west-field-investigation-work-in-southern-ca-and-nev-apr-2",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-new-locations-for-brightline-west-field-investigation-work-in-southern-ca-and-nev-apr-2",
+      "id": "dbca06ef71ec8d9a39ea8afc675cf538a4cc12ef"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-new-locations-for-brightline-west-field-investigation-work-in-southern-ca-and-nev-apr-8",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-new-locations-for-brightline-west-field-investigation-work-in-southern-ca-and-nev-apr-8",
+      "id": "b6edada4a8797cf37bcada46e03fc2ec375c429c"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-new-locations-for-brightline-west-field-investigation-work-in-southern-ca-and-nev-march-18",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-new-locations-for-brightline-west-field-investigation-work-in-southern-ca-and-nev-march-18",
+      "id": "1215137fe237744be6016ca3846a472535489455"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-new-locations-for-brightline-west-field-investigation-work-in-southern-ca-and-nev-march-25",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-new-locations-for-brightline-west-field-investigation-work-in-southern-ca-and-nev-march-25",
+      "id": "e526fe4978c0386e79654eea723139b37a85a7fb"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-new-locations-for-brightline-west-field-investigation-work-in-southern-california-7-1-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-new-locations-for-brightline-west-field-investigation-work-in-southern-california-7-1-24",
+      "id": "301227290614635be90294a42b0aae5efc404902"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-new-locations-for-brightline-west-field-investigation-work-southern-california-11-04-24",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2024/update-new-locations-for-brightline-west-field-investigation-work-southern-california-11-04-24",
+      "id": "2124a72c130c8638d201eac1937673f5c9ec11d6"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-01-13-25",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-01-13-25",
+      "id": "0771edbf1eeac7463dd87ae295c9c97efa167d0d"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-02-17-25",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-02-17-25",
+      "id": "ba4ddb830623bbff7d4f5a45bb8bd86ae2d86116"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-02-24-25",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-02-24-25",
+      "id": "a2b817b11be7e59b6af861a894bcf0de6963ed5b"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-05-19-25",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-05-19-25",
+      "id": "918c4c96a93173e60431b77ca1a90c734f65f992"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-05-27-25",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-05-27-25",
+      "id": "ad820de885dd0dee31e637927fb79eac64bc10f8"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-06-02-25",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-06-02-25",
+      "id": "e12f4a07714ea9c42becca63f3134f890194270f"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-06-09-25",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-06-09-25",
+      "id": "bc004f2e8dd174daf830e8c80612697a8b0f5c2f"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-06-16-25",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-06-16-25",
+      "id": "d6abae943707cd9bf7a6cc2cd8175b64d7f3333a"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-06-23-25",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-06-23-25",
+      "id": "0a021a083b9f52f8af90c8a1f4830783b097c153"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-06-30-25",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-06-30-25",
+      "id": "afa51f32aaba0e1eb12abc56120bf3a9e49820df"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-07-07-25",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-07-07-25",
+      "id": "9461608796aefb44f21e916a4a02250af75b4e02"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-07-14-25",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/2025/update-brightline-west-field-investigation-work-southern-california-07-14-25",
+      "id": "46086f81e49888ac98374bae3e3e3b1dca45df07"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/archive",
+      "source": "SITEMAPS",
+      "targetPath": "/media/press-releases/archive",
+      "id": "0c88fe96ed7f1f6c1e6aff9300027c7048ffb8e6"
+    },
+    {
+      "url": "https://www.brightlinewest.com/overview",
+      "source": "SITEMAPS",
+      "targetPath": "/overview",
+      "id": "721095bcff08284ef56bf05338a05fb065aa7745"
+    },
+    {
+      "url": "https://www.brightlinewest.com/overview/experience",
+      "source": "SITEMAPS",
+      "targetPath": "/overview/experience",
+      "id": "5b34dbb73b794799b9e8458e04241d3250fdac98"
+    },
+    {
+      "url": "https://www.brightlinewest.com/overview/project",
+      "source": "SITEMAPS",
+      "targetPath": "/overview/project",
+      "id": "c2e033b045335997e7aaa32003084fc845254e06"
+    },
+    {
+      "url": "https://www.brightlinewest.com/overview/stations",
+      "source": "SITEMAPS",
+      "targetPath": "/overview/stations",
+      "id": "683d0c06f07043fd07440df4563d0f0ede0a57dd"
+    },
+    {
+      "url": "https://www.brightlinewest.com/people-and-culture",
+      "source": "SITEMAPS",
+      "targetPath": "/people-and-culture",
+      "id": "0aaea65f87cce14bfecbcb34a694f10159f6bccf"
+    },
+    {
+      "url": "https://www.brightlinewest.com/privacy-policy",
+      "source": "SITEMAPS",
+      "targetPath": "/privacy-policy",
+      "id": "feb6c523cfa96c70724be94977a439b330dd90ad"
+    },
+    {
+      "url": "https://www.brightlinewest.com/railroad-construction",
+      "source": "SITEMAPS",
+      "targetPath": "/railroad-construction",
+      "id": "6468d4803f06d6c6b1d1dc39514f3b885ff8489c"
+    },
+    {
+      "url": "https://www.brightlinewest.com/railroad-construction/vendors",
+      "source": "SITEMAPS",
+      "targetPath": "/railroad-construction/vendors",
+      "id": "6fcb9d3c78fec66cddfb21329ca37d59c568aee2"
+    },
+    {
+      "url": "https://www.brightlinewest.com/railroad-construction/work-advisory-archive",
+      "source": "SITEMAPS",
+      "targetPath": "/railroad-construction/work-advisory-archive",
+      "id": "722233d985247c246ba39ec57e681f2e5020fb79"
+    },
+    {
+      "url": "https://www.brightlinewest.com/terms-of-use",
+      "source": "SITEMAPS",
+      "targetPath": "/terms-of-use",
+      "id": "48e4909afd2a8d424c283bf1325686082a930e74"
+    }
+  ],
+  "crawlOptions": {
+    "timeout": 64800000,
+    "inclusionPatterns": [],
+    "exclusionPatterns": [],
+    "limit": -1,
+    "sameDomain": true,
+    "keepHash": false,
+    "strategy": "sitemaps",
+    "logger": {},
+    "strategiesAttempted": [
+      "SITEMAPS"
+    ]
+  },
+  "extractionErrors": [
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2023",
+      "status": "404 Not Found"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024",
+      "status": "404 Not Found"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-10-28-241",
+      "status": "404 Not Found"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2025",
+      "status": "404 Not Found"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2025/update-new-locations-for-brightline-west-field-investigation-wo",
+      "status": "404 Not Found"
+    },
+    {
+      "url": "https://www.brightlinewest.com/media/press-releases/2025/update-new-locations-for-brightline-west-field-investigation-wo1",
+      "status": "404 Not Found"
+    }
+  ]
+}
