@@ -2703,11 +2703,11 @@
       ]
     },
     {
-      "name": "Cards",
+      "name": "Columns",
       "cluster": 4,
-      "source": "Cards",
-      "target": "Cards (cards4)",
-      "key": "cards4",
+      "source": "Columns",
+      "target": "Columns (columns4)",
+      "key": "columns4",
       "instances": [
         {
           "url": "https://www.brightlinewest.com/media/press-releases/2024/signed-sealed-and-delivered-3-billion-grant-agreement-for-brightline-west-project-officially-signed",
@@ -2724,11 +2724,11 @@
       ]
     },
     {
-      "name": "Cards (no images)",
+      "name": "Columns",
       "cluster": 5,
-      "source": "Cards",
-      "target": "Cards",
-      "key": "cardsNoImages5",
+      "source": "Columns",
+      "target": "Columns (columns5)",
+      "key": "columns5",
       "instances": [
         {
           "url": "https://www.brightlinewest.com/media/press-releases",
@@ -3881,11 +3881,11 @@
       ]
     },
     {
-      "name": "Columns",
+      "name": "Embed (video)",
       "cluster": 21,
-      "source": "Columns",
-      "target": "Columns (columns21)",
-      "key": "columns21",
+      "source": "Embed",
+      "target": "Embed (embedVideo21)",
+      "key": "embedVideo21",
       "instances": [
         {
           "url": "https://www.brightlinewest.com/media/press-releases/2024/update-brightline-west-field-investigation-work-southern-california-and-nevada-6-10-24",
@@ -5906,7 +5906,7 @@
       "name": "Embed (video)",
       "cluster": 32,
       "source": "Embed",
-      "target": "Embed",
+      "target": "Embed (embedVideo32)",
       "key": "embedVideo32",
       "instances": [
         {
